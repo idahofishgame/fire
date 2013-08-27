@@ -12,3 +12,6 @@ Credits
 =======
 Jquery-Mobile-Slide-Menu by tegansnyder
 https://github.com/tegansnyder/JQuery-Mobile-Slide-Menu
+
+ArcGIS Server Link for Google Maps JavaScript API V3
+http://google-maps-utility-library-v3.googlecode.com
