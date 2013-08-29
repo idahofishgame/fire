@@ -305,7 +305,7 @@ google.setOnLoadCallback(function () {
         map.overlayMapTypes.push(SLPLayer);
 
 
-		var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/ifwis/portal/sites/ifwis/files/opendata/FireEmergencyClosures.kmz?v=3');
+		var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/ifwis/portal/sites/ifwis/files/opendata/FireEmergencyClosures.kmz?v=3.1a');
        closureLayer.setMap(map);
 		
 		//var perimeterLayer = new 
