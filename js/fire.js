@@ -34,9 +34,6 @@ var style = {
     strokeOpacity: 1,
     zIndex: 0
 };
-
-//google.load("jquery", "1.4.2");
-//google.load("jqueryui", "1.8.1");
 google.load("maps", "3", {
     other_params: "sensor=true"
 });
@@ -100,7 +97,7 @@ google.setOnLoadCallback(function () {
         });
         google.maps.event.addListener(gmaps.ags.Util, 'jsonpend', function () {
             map.setOptions({
-                draggableCursor: 'url(http://maps.gstatic.com/intl/en_us/mapfiles/openhand_8_8.cur),default' //inherit'
+                draggableCursor: 'url(//maps.gstatic.com/intl/en_us/mapfiles/openhand_8_8.cur),default' //inherit'
             });
         });
     }
@@ -202,8 +199,6 @@ google.setOnLoadCallback(function () {
 
     loadScript("/ifwis/_js/agslink.js", function () {
 
-       // addLayer(map, "http://fishandgame.idaho.gov/gis/rest/services/mapcenter_hunt/MapServer", "", 0, "ID = " + lyrval, defaultout, style, function () { });
-
         $('#gmu').change(function () {
             addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Special/HuntPlanner_Mapcenter/MapServer", $("#gmu option:selected").text(), 0, "ID = " + $('#gmu').val(), defaultout, style, function () { });
             $('#elkzone').prop('selectedIndex', 0);
@@ -233,7 +228,7 @@ google.setOnLoadCallback(function () {
     //Define OSM as base layer in addition to the default Google layers
     var osmMapType = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
-            return "http://otile1.mqcdn.com/tiles/1.0.0/osm/" +
+            return "//otile1.mqcdn.com/tiles/1.0.0/osm/" +
 		            zoom + "/" + coord.x + "/" + coord.y + ".png";
         },
         tileSize: new google.maps.Size(256, 256),
@@ -264,7 +259,7 @@ google.setOnLoadCallback(function () {
     	                               (top.lat() + deltaY);
 
             //base WMS URL
-            var url = "http://activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map";
+            var url = "//activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map";
             url += "&REQUEST=GetMap"; //WMS operation
             url += "&SERVICE=WMS";    //WMS service
             url += "&VERSION=1.1.1";  //WMS version  
@@ -305,11 +300,11 @@ google.setOnLoadCallback(function () {
         map.overlayMapTypes.push(SLPLayer);
 
 
-		var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/ifwis/portal/sites/ifwis/files/opendata/FireEmergencyClosures.kmz?v=3.1a');
+		var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/ifwis/portal/sites/ifwis/files/opendata/FireEmergencyClosures.kmz');
        closureLayer.setMap(map);
 		
 		//var perimeterLayer = new 
-		//google.maps.KmlLayer('http://rmgsc.cr.usgs.gov/outgoing/GeoMAC/current_year_fire_data/KMLS//ActiveFirePerimeters.kml?v=26d', { preserveViewport: true });
+		//google.maps.KmlLayer('//rmgsc.cr.usgs.gov/outgoing/GeoMAC/current_year_fire_data/KMLS//ActiveFirePerimeters.kml?v=26d', { preserveViewport: true });
         //perimeterLayer.setMap(map);
     }
 
