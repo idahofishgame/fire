@@ -17,7 +17,6 @@ var minimumlatitude = 90; //lat min
 var maximumlatitude = -90; //lat max
 
 
-
 var hStyle = {
     fillColor: '#ac30b5',
     fillOpacity: 0.05,
@@ -38,6 +37,11 @@ google.load("maps", "3", {
     other_params: "sensor=true"
 });
 
+$(document).ready(function () {
+    $('#gmu').prop('selectedIndex', 0);
+    $('#chunt').prop('selectedIndex', 0);
+    $('#elkzone').prop('selectedIndex', 0);
+});
 
 function loadScript(url, callback) {
     var script = document.createElement("script");
@@ -61,8 +65,8 @@ function loadScript(url, callback) {
 google.setOnLoadCallback(function () {
 
 
-
     function processResultSet(rs) {
+        console.log("rs:" + JSON.stringify(rs));
         var fs = rs.features;
         if (fs == "") {
             $("#map_drawing").hide();
@@ -128,17 +132,21 @@ google.setOnLoadCallback(function () {
 
         if (Math.min.apply(Math, latar) < minimumlatitude) {
             minimumlatitude = Math.min.apply(Math, latar)
-        };
+        }
+        ;
         if (Math.max.apply(Math, latar) > maximumlatitude) {
             maximumlatitude = Math.max.apply(Math, latar)
-        };
+        }
+        ;
 
         if (Math.min.apply(Math, lngar) < minimumlongitude) {
             minimumlongitude = Math.min.apply(Math, lngar)
-        };
+        }
+        ;
         if (Math.max.apply(Math, lngar) > maximumlongitude) {
             maximumlongitude = Math.max.apply(Math, lngar)
-        };
+        }
+        ;
 
 
         var southWest = new google.maps.LatLng(minimumlatitude, minimumlongitude);
@@ -173,54 +181,62 @@ google.setOnLoadCallback(function () {
     }
 
     function addLayer(mapname, url, lbl, lyropt, where, outfields, thisstyle, callbackfn) {
-		if (where != 'ID = 420') {
-        minimumlongitude = 180; //lng min
-        maximumlongitude = -180; //lng max
-        minimumlatitude = 90; //lat min
-        maximumlatitude = -90; //lat max
+        if (where != 'ID = 420') {
+            minimumlongitude = 180; //lng min
+            maximumlongitude = -180; //lng max
+            minimumlatitude = 90; //lat min
+            maximumlatitude = -90; //lat max
 
-		 if (dynamap != null) {
-			dynamap.setMap(null);
-		}
-	
-        layer = new gmaps.ags.Layer(url + '/' + lyropt);
-        var params = {
-            returnGeometry: true,
-            where: where,
-            outFields: outfields,
-            overlayOptions: thisstyle
-        };
-        layer.query(params, processResultSet);
-        callbackfn();
-        return false;
-		}
+            if (dynamap != null) {
+                dynamap.setMap(null);
+            }
+
+            layer = new gmaps.ags.Layer(url + '/' + lyropt);
+            var params = {
+                returnGeometry: true,
+                where: where,
+                outFields: outfields,
+                overlayOptions: thisstyle
+            };
+            layer.query(params, processResultSet);
+            callbackfn();
+            return false;
+        }
     }
-	
+
 
     loadScript("/ifwis/_js/agslink.js", function () {
 
         $('#gmu').change(function () {
-            addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Special/HuntPlanner_Mapcenter/MapServer", $("#gmu option:selected").text(), 0, "ID = " + $('#gmu').val(), defaultout, style, function () { });
+            addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Apps/Huntplanner/MapServer", $("#gmu option:selected").text(), 0, "ID = " + $('#gmu').val(), defaultout, style, function () {
+            });
             $('#elkzone').prop('selectedIndex', 0);
-			$('#chunt').prop('selectedIndex', 0);
+            $('#chunt').prop('selectedIndex', 0);
         });
 
         $('#elkzone').change(function () {
-            addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Special/HuntPlanner_Mapcenter/MapServer", $("#elkzone option:selected").text(), 0, "ID = " + $('#elkzone').val(), defaultout, style, function () { });
+            addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Apps/Huntplanner/MapServer", $("#elkzone option:selected").text(), 0, "ID = " + $('#elkzone').val(), defaultout, style, function () {
+            });
             $('#gmu').prop('selectedIndex', 0);
-			$('#chunt').prop('selectedIndex', 0);
+            $('#chunt').prop('selectedIndex', 0);
         });
 
         $('#chunt').change(function () {
-            addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Special/HuntPlanner_Mapcenter/MapServer", $("#chunt option:selected").text(), 0, "ID = " + $('#chunt').val(), defaultout, style, function () { });
+            addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Apps/MapCenterQueryLayers/MapServer", $("#chunt option:selected").text(), 0, "ID = " + $('#chunt').val(), defaultout, style, function () {
+            });
             $('#gmu').prop('selectedIndex', 0);
-			$('#elkzone').prop('selectedIndex', 0);
+            $('#elkzone').prop('selectedIndex', 0);
         });
-		
-						var sm = $($(":jqmData(slidemenu)").data('slidemenu'));
-	if (viewport().width > 900) {
-		slidemenu(sm);
-	}
+
+        //var perimeterURL = 'http://wildfire.cr.usgs.gov/arcgis/rest/services/geomac_perims/MapServer';
+       // var perimeterLayer = new gmaps.ags.Service(perimeterURL);
+        //perimeterLayer.setMap(map);
+
+
+        var sm = $($(":jqmData(slidemenu)").data('slidemenu'));
+        if (viewport().width > 900) {
+            slidemenu(sm);
+        }
 
     });
 
@@ -229,7 +245,7 @@ google.setOnLoadCallback(function () {
     var osmMapType = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
             return "//otile1.mqcdn.com/tiles/1.0.0/osm/" +
-		            zoom + "/" + coord.x + "/" + coord.y + ".png";
+                zoom + "/" + coord.x + "/" + coord.y + ".png";
         },
         tileSize: new google.maps.Size(256, 256),
         isPng: true,
@@ -254,9 +270,9 @@ google.setOnLoadCallback(function () {
 
             //create the Bounding box string
             var bbox = (top.lng() + deltaX) + "," +
-    	                               (bot.lat() + deltaY) + "," +
-    	                               (bot.lng() + deltaX) + "," +
-    	                               (top.lat() + deltaY);
+                (bot.lat() + deltaY) + "," +
+                (bot.lng() + deltaX) + "," +
+                (top.lat() + deltaY);
 
             //base WMS URL
             var url = "//activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map";
@@ -280,8 +296,6 @@ google.setOnLoadCallback(function () {
     });
 
 
-
-
     function initialize() {
         var mapOptions = {
             zoom: 7,
@@ -300,11 +314,13 @@ google.setOnLoadCallback(function () {
         map.overlayMapTypes.push(SLPLayer);
 
 
-		var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/ifwis/portal/sites/ifwis/files/opendata/FireEmergencyClosures.kmz');
-       closureLayer.setMap(map);
-		
-		//var perimeterLayer = new 
-		//google.maps.KmlLayer('//rmgsc.cr.usgs.gov/outgoing/GeoMAC/current_year_fire_data/KMLS//ActiveFirePerimeters.kml?v=26d', { preserveViewport: true });
+        var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer/0/query?where=1+%3D+1&outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz');
+        closureLayer.setMap(map);
+
+        //http://wildfire.cr.usgs.gov/arcgis/services/geomac_perims/MapServer/KmlServer?Composite=false&LayerIDs=4
+
+        //var perimeterLayer = new
+        // google.maps.KmlLayer('http://wildfire.cr.usgs.gov/arcgis/services/geomac_perims/MapServer/4/outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz');
         //perimeterLayer.setMap(map);
     }
 
@@ -312,21 +328,25 @@ google.setOnLoadCallback(function () {
     function kml(surl) {
         if (surl != "") {
             //clearOverlays();
-			kmlLayer = new google.maps.KmlLayer(surl, { preserveViewport: true, clickable: true, suppressInfoWindows: false });
+            kmlLayer = new google.maps.KmlLayer(surl, {
+                preserveViewport: true,
+                clickable: true,
+                suppressInfoWindows: false
+            });
             map.currentLayer = kmlLayer;
         }
     }
 
 
     initialize();
-	
-	$("#clearmap").click(
-		function() {
-			dynamap.setMap(null);
-			$('#gmu').prop('selectedIndex', 0);
-			$('#chunt').prop('selectedIndex', 0);
-			$('#elkzone').prop('selectedIndex', 0);
-		}
-	);
+
+    $("#clearmap").click(
+        function () {
+            dynamap.setMap(null);
+            $('#gmu').prop('selectedIndex', 0);
+            $('#chunt').prop('selectedIndex', 0);
+            $('#elkzone').prop('selectedIndex', 0);
+        }
+    );
 });
  

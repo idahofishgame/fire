@@ -16,59 +16,66 @@
 		</div>
 		<div data-role="content">
 			<h1>Real-Time Fires with Hunt Areas</h1>
-			<p>This application displays real-time fire information from MODIS Fire Detections with the most recent Fire Emergency Closures for fire closures in Idaho from <a rel="external" href="http://www.inciweb.org/state/closures/13/">Idaho InciWeb Closures</a></p>
+			<p>This application displays real-time fire information from MODIS Fire Detections with the most recent Fire Emergency Closures for fire closures in Idaho from <a rel="external" href="http://inciweb.nwcg.gov/state/closures/13/">Idaho InciWeb Closures</a></p>
 			<p>Hunt boundaries for Controlled Hunts, Game Management Units and Elk Zones may be added by selecting a hunt from the right-hand menu.  For more layers and options visit the Idaho Fish and Game <a href="http://fishandgame.idaho.gov/ifwis/huntplanner/mapcenter/" title="MapCenter" rel="external">Huntplanner MapCenter</a>.</p>
 			<p>Background terrain maps, road maps and aerial imagery may be interchanged by toggling the map dropdown in the upper-left.</p>
 			<h2>Data Sources</h2>
 			<p>This application is constructed by "mashing up" publicly-available data sources from the <a rel="external" href="http://activefiremaps.fs.fed.us/wms.php">U.S. Forest Service</a>, <a rel="external" href="http://www.nifc.gov/">National Interagency Fire Center FTP Server</a>, <a rel="external" href="https://fishandgame.idaho.gov/ifwis/portal">Idaho Fish and Wildife Information System</a>, <a rel="external" href="http://www.openstreetmap.org/">Open Street Maps</a> and <a rel="external" href="http://maps.google.com">Google Maps</a>.</p>
 			<ul><li><a rel="external" href="http://activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map">ActiveFireMaps WMS Tiled Layer</a></li>
 			<li><a rel="external" href="ftp://ftp.nifc.gov/">National Interagency Fire Center FTP Server</a></li>
-			<li><a rel="external" href="http://fishandgame.idaho.gov/gis/rest/services/huntplanner/MapServer">Idaho Fish and Wildlife Information System ArcGIS Map Server</a></li><li><a rel="external" href="https://fishandgame.idaho.gov/ifwis/portal/opendata/">Idaho Fish and Wildife Information System Open Data</a> - KML or SHP downloads</li><li><a rel="external" href="http://wiki.openstreetmap.org/wiki/Mapquest#MapQuest-hosted_map_tiles">MapQuest Open Street Maps Tile Service</a></li><li><a rel="external" href="https://developers.google.com/maps/documentation/javascript/">Google Maps Javascript API V3 </a></li></ul>
+			<li><a rel="external" href="https://fishandgame.idaho.gov/gis/rest/services/Apps/Huntplanner/MapServer">Idaho Fish and Wildlife Information System ArcGIS Map Server</a></li><li><a rel="external" href="http://data.idfggis.opendata.arcgis.com/">Idaho Fish and Wildife Information System Open Data</a> - KML or SHP downloads</li><li><a rel="external" href="http://wiki.openstreetmap.org/wiki/Mapquest#MapQuest-hosted_map_tiles">MapQuest Open Street Maps Tile Service</a></li><li><a rel="external" href="https://developers.google.com/maps/documentation/javascript/">Google Maps Javascript API V3 </a></li></ul>
 			<h3>GIS Data Downloads</h3>
 			<ul>
 				<li>Real-Time MODIS Fire Detections Layer (<a rel="external" href="http://activefiremaps.fs.fed.us/googleearth.php">kml</a>, <a rel="external" href="http://activefiremaps.fs.fed.us/gisdata.php">shp</a>, <a rel="external" href="http://activefiremaps.fs.fed.us/wms.php">wms</a>)</li>
-				<li>Fire Closures maintained by IDFG, Boise NF and wildfire incident managment teams. (<a rel="external" href="https://fishandgame.idaho.gov/ifwis/portal/sites/ifwis/files/opendata/FireEmergencyClosures.kmz">kmz</a>, <a rel="external" href="https://fishandgame.idaho.gov/ifwis/portal/sites/ifwis/files/opendata/FireEmergencyClosures.shp.zip">shp.zip</a>) </li>
+				<li>Fire Closures maintained by IDFG, Boise NF and wildfire incident management teams. (<a rel="external" href="https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer">ArcGIS Map Server</a>, <a rel="external" href="https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer/0/query?where=1+%3D+1&outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz">Google Earth Layer</a>) </li>
 			</ul>
       <h3>Code</h3>
-      <p>Application developed by <a rel="external" href="https://fishandgame.idaho.gov/ifwis/portal">Idaho Fish and Wildlife Information System</a> at Idaho Fish and Game.  Code public domain and available on <a rel="external" href="https://github.com/stupiddingo/fire">GitHub</a><p>
+      <p>Application developed by <a rel="external" href="https://fishandgame.idaho.gov/ifwis/portal">Idaho Fish and Wildlife Information System</a> at Idaho Fish and Game.  Code public domain and available on <a rel="external" href="https://github.com/idahofishgame/fire">GitHub</a><p>
 			<h2>Change Log</h2>
 			<ul>
-			  <li>v3.7 - 9/18/2013 - Fire closures reduced for Elk Complex Fire (USFS Order #0402-01-51) and Weiser Complex (USFS Order #0412-455). Gold Pan, Lake Complex, Papoose, Thunder City, Lodgepole, Howard terminated.</li>
-        <li>v3.6 - 9/11/2013 - New reduced closure for Kelley Fire (USFS Order#0414-05-041). Termination of Ridge Fire Trail Closure (USFS Order #0402-05-50). Stage 1 Fire Restrictions terminated on the Boise National Forest, Sawtooth National Forest, and Payette National Forest.</li>
-        <li>v3.5 - 9/9/2013 - Nez Perce and Weiser Complex Closures reduced. New reduced closure for Kelley Fire added to begin 9/11/2013.  Existing Closure still in effect until then and remains on maps.</li>
-				<li>v3.4 - 9/4/2013 - Kelley Fire Closure Expanded, Nez Perce Closure added.</li>
-				<li>v3.3 - 9/3/2013 - Beaver Creek, Gold Pan, Little Queens Closures Reduced.  Ridge Fire, Weiser Complex Closures added. Caching policy updated.</li>
-				<li>v3.2 - 8/30/2013 - Beaver Creek BLM Closure Area reduced (BLM Order 8/30/2013).</li>
-				<li>v3.1 - 8/29/2013 - Kelley Fire Closure Area added (USFS Order#0414-05-038). Lodgepole Fire Closure reduced (USFS Order #04-13-13-556).</li>
-				</li>v3.0 - 8/27/2013 - Updated to documentation, code, JQuery, JQueryUI. Added to GitHub.</li>
-				<li>v2.26 - 8/27/2013 - BLM Beaver Creek Closure Reduced.</li>
-				<li>v2.25 - 8/23/2013 - Howard Fire Trail Closure (USFS Order #0412-0452) and Lake Complex Trail Closure (USFS Order #13_D5_NP_08) added.</li>
-				<li>v2.24 - 8/23/2013 - Little Queens Closure updated (USFS Order #0402-00-31). Beaver Creek Fire Closure for Fairfield Ranger District, Sawtooth NF added (USFS Order #0414-05-037).  Thunder City Area Closure added, Trail Closure Removed (USGS Order #0412-451). Elk Fire Closure Reduced (USFS Order #0402-01-50).  Fairfield Ranger District closure order lifted.</li>
-				<li>v2.23 - 8/19/2013 - Little Queens Closure added.  Lodgepole Closure reduced.</li>
-				<li>v2.22 - 8/17/2013 - Gold Pan Fire Closure (approximate boundary) added.</li>
-				<li>v2.21 - 8/17/2013 - Lodgepole, Papoose and Thunder City Closures added.</li>
-				<li>v2.20 - 8/16/2013 - Beaver Creek Fire BLM Closures added.</li>
-				<li>v2.19 - 8/16/2013 - Beaver Creek Fire Closure extended.</li>
-				<li>v2.18 - 8/13/2013 - Fairfield and Beaver Creek Fire Closures added.</li>
-				<li>v2.17 - 8/13/2013 - Boise National Forest, Elk Creek Complex Closure added.</li>
-				<li>v2.16 - 8/12/2013 - Updated for 2013 fire season, fire closures removed until updates available.</li>
-				<li>v2.15 - 10/31/2012 - ALL FIRE CLOSURES LIFTED</li>
-				<li>v2.14 - 10/19/2012  - Powell SBW East and West Closures removed.</li>
-				<li>v2.13 - 10/18/2012  - McGuire, Halstead and Sheep Fire Closures removed.</li>
-				<li>v2.12 - 10/9/2012 - Halstead Closure reduced.</li>
-				<li>v2.11 - 10/2/2012 - Trinity Ridge and Sheep Fire Area Closures updated.</li>
-				<li>v2.10 - 10/1/2012 - Wesley and Powell Sbw Closures updated.</li>
-				<li>v2.9 - 9/20/2012 - Porcupine Closure 12-D4-62 added.</li>
-				<li>v2.8 - 9/19/2012 - Wesley Closure updated, Mustang Closures 533 and 534 terminated.</li>
-				<li>v2.7 - 9/17/2012 - Closure descriptions updated for McGuire and Porcupine Complex Fire Closures. Digitizing on HWY 93 between North Fork and Montana line refined.</li>
-				<li>v2.6 - 9/14/2012 - Halstead and Trinity Ridge perimeters reduced.  Mustang Complex perimeter expanded.  Goat/Ditch, McGuire, Porcupine, Powell Sbw, Sheep Fire Closures added. Links to InciWeb and closure dates now available in popup bubble for each fire.</li>
-				<li>v2.5 - 9/12/2012 - Wesley Fire Emergency Closure added.</li>
-				<li>v2.4 - 9/06/2012 - Trinity Ridge Fire Emergency Closure update.  Zipped shapefile added to downloads.</li>
-				<li>v2.3 - 8/31/2012 - Trinity Ridge Fire Emergency Closure update. Menu loads expanded on large screens.</li>
-				<li>v2.2 - 8/30/2012 - IE Conditionals and JS tweaks added for IE8 &amp; IE7</li>
-				<li>v2.1 - 8/29/2012 - Links to data sources and downloads</li>
-				<li>v2.0 - 8/28/2012 - Enhancements for mobile and touch screens.</li>
-				<li>v1 - 8/22/2012 - Went into production.</li>
+				<li>7/7/2015 - Blue Fire closure added.</li>
+				<li>11/10/2014 - NO CLOSURES AT THIS TIME.</li>
+				<li>9/2/2014 - Johnson Bar Fire area closure removed.</li>
+				<li>8/15/2014 - Myers and Johnson Bar Fires area closures added.</li>
+				<li>7/26/2014 - Whiskey Complex area closure reduced.</li>
+				<li>7/24/2014 - Mack Fire area closure added.</li>
+        <li>7/22/2014 - Whiskey Complex Area Closure still in effect but the Hot Springs Campground is now open to the public.</li>
+				<li>7/17/2014 - Whiskey Complex Area Closure updated with outline provided by Boise NF.</li>
+        <li>7/15/2014 - Whiskey Complex Area Closure added, Hell Roaring Closure removed.</li>
+        <li>7/7/2014 - Hell Roaring Closure added.</li>
+        <li>10/2/2013 - Road closures for Kelley Fire removed.  Weiser Complex Closure Area removed, road closure added.</li>
+			  <li>9/27/2013 - Fire closures reduced for the Beaver Creek Fire (USFS Order #041-03-027) and the Kelley Fire (USFS Order #0414-05-42). The Little Queens Fire Closure has been rescinded with the exception of two Forest roads in the immediate area of the burn.</li>
+			  <li>9/18/2013 - Fire closures reduced for Elk Complex Fire (USFS Order #0402-01-51) and Weiser Complex (USFS Order #0412-455). Gold Pan, Lake Complex, Papoose, Thunder City, Lodgepole, Howard terminated.</li>
+        <li>9/11/2013 - New reduced closure for Kelley Fire (USFS Order#0414-05-041). Termination of Ridge Fire Trail Closure (USFS Order #0402-05-50). Stage 1 Fire Restrictions terminated on the Boise National Forest, Sawtooth National Forest, and Payette National Forest.</li>
+        <li>9/9/2013 - Nez Perce and Weiser Complex Closures reduced. New reduced closure for Kelley Fire added to begin 9/11/2013.  Existing Closure still in effect until then and remains on maps.</li>
+				<li>9/4/2013 - Kelley Fire Closure Expanded, Nez Perce Closure added.</li>
+				<li>9/3/2013 - Beaver Creek, Gold Pan, Little Queens Closures Reduced.  Ridge Fire, Weiser Complex Closures added. Caching policy updated.</li>
+				<li>8/30/2013 - Beaver Creek BLM Closure Area reduced (BLM Order 8/30/2013).</li>
+				<li>8/29/2013 - Kelley Fire Closure Area added (USFS Order#0414-05-038). Lodgepole Fire Closure reduced (USFS Order #04-13-13-556).</li>
+				<li>8/27/2013 - BLM Beaver Creek Closure Reduced.</li>
+				<li>8/23/2013 - Howard Fire Trail Closure (USFS Order #0412-0452) and Lake Complex Trail Closure (USFS Order #13_D5_NP_08) added.</li>
+				<li>8/23/2013 - Little Queens Closure updated (USFS Order #0402-00-31). Beaver Creek Fire Closure for Fairfield Ranger District, Sawtooth NF added (USFS Order #0414-05-037).  Thunder City Area Closure added, Trail Closure Removed (USGS Order #0412-451). Elk Fire Closure Reduced (USFS Order #0402-01-50).  Fairfield Ranger District closure order lifted.</li>
+				<li>8/19/2013 - Little Queens Closure added.  Lodgepole Closure reduced.</li>
+				<li>8/17/2013 - Gold Pan Fire Closure (approximate boundary) added.</li>
+				<li>8/17/2013 - Lodgepole, Papoose and Thunder City Closures added.</li>
+				<li>8/16/2013 - Beaver Creek Fire BLM Closures added.</li>
+				<li>8/16/2013 - Beaver Creek Fire Closure extended.</li>
+				<li>8/13/2013 - Fairfield and Beaver Creek Fire Closures added.</li>
+				<li>8/13/2013 - Boise National Forest, Elk Creek Complex Closure added.</li>
+				<li>10/31/2012 - ALL FIRE CLOSURES LIFTED</li>
+				<li>10/19/2012  - Powell SBW East and West Closures removed.</li>
+				<li>10/18/2012  - McGuire, Halstead and Sheep Fire Closures removed.</li>
+				<li>10/9/2012 - Halstead Closure reduced.</li>
+				<li>10/2/2012 - Trinity Ridge and Sheep Fire Area Closures updated.</li>
+				<li>10/1/2012 - Wesley and Powell Sbw Closures updated.</li>
+				<li>9/20/2012 - Porcupine Closure 12-D4-62 added.</li>
+				<li>9/19/2012 - Wesley Closure updated, Mustang Closures 533 and 534 terminated.</li>
+				<li>9/17/2012 - Closure descriptions updated for McGuire and Porcupine Complex Fire Closures. Digitizing on HWY 93 between North Fork and Montana line refined.</li>
+				<li>9/14/2012 - Halstead and Trinity Ridge perimeters reduced.  Mustang Complex perimeter expanded.  Goat/Ditch, McGuire, Porcupine, Powell Sbw, Sheep Fire Closures added.</li>
+				<li>9/12/2012 - Wesley Fire Emergency Closure added.</li>
+				<li>9/06/2012 - Trinity Ridge Fire Emergency Closure update.</li>
+				<li>8/31/2012 - Trinity Ridge Fire Emergency Closure update.</li>
+				<li>8/22/2012 - Initial release. Trinity Ridge Fire Closure.</li>
 			</ul>
 			<a href="http://fishandgame.idaho.gov/ifwis/maps/realtime/fire/" data-role="button" data-rel="back" data-theme="a" data-icon="back">Back</a>       
 		</div>
