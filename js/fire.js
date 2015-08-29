@@ -101,7 +101,7 @@ google.setOnLoadCallback(function () {
         });
         google.maps.event.addListener(gmaps.ags.Util, 'jsonpend', function () {
             map.setOptions({
-                draggableCursor: 'url(//maps.gstatic.com/intl/en_us/mapfiles/openhand_8_8.cur),default' //inherit'
+                draggableCursor: 'url(https://maps.gstatic.com/intl/en_us/mapfiles/openhand_8_8.cur),default' //inherit'
             });
         });
     }
@@ -131,23 +131,17 @@ google.setOnLoadCallback(function () {
         }
 
         if (Math.min.apply(Math, latar) < minimumlatitude) {
-            minimumlatitude = Math.min.apply(Math, latar)
+            minimumlatitude = Math.min.apply(Math, latar);
         }
-        ;
         if (Math.max.apply(Math, latar) > maximumlatitude) {
-            maximumlatitude = Math.max.apply(Math, latar)
+            maximumlatitude = Math.max.apply(Math, latar);
         }
-        ;
-
         if (Math.min.apply(Math, lngar) < minimumlongitude) {
-            minimumlongitude = Math.min.apply(Math, lngar)
+            minimumlongitude = Math.min.apply(Math, lngar);
         }
-        ;
         if (Math.max.apply(Math, lngar) > maximumlongitude) {
-            maximumlongitude = Math.max.apply(Math, lngar)
+            maximumlongitude = Math.max.apply(Math, lngar);
         }
-        ;
-
 
         var southWest = new google.maps.LatLng(minimumlatitude, minimumlongitude);
         var northEast = new google.maps.LatLng(maximumlatitude, maximumlongitude);
@@ -205,7 +199,7 @@ google.setOnLoadCallback(function () {
     }
 
 
-    loadScript("/ifwis/_js/agslink.js", function () {
+    loadScript("js/agslink.js", function () {
 
         $('#gmu').change(function () {
             addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Apps/Huntplanner/MapServer", $("#gmu option:selected").text(), 0, "ID = " + $('#gmu').val(), defaultout, style, function () {
@@ -228,10 +222,9 @@ google.setOnLoadCallback(function () {
             $('#elkzone').prop('selectedIndex', 0);
         });
 
-        //var perimeterURL = 'http://wildfire.cr.usgs.gov/arcgis/rest/services/geomac_perims/MapServer';
-       // var perimeterLayer = new gmaps.ags.Service(perimeterURL);
-        //perimeterLayer.setMap(map);
-
+        var perimeterURL = 'http://wildfire.cr.usgs.gov/arcgis/rest/services/GeoPerimKML/MapServer';
+        var perimeterLayer = new gmaps.ags.MapOverlay(perimeterURL);
+        perimeterLayer.setMap(map);
 
         var sm = $($(":jqmData(slidemenu)").data('slidemenu'));
         if (viewport().width > 900) {
@@ -244,7 +237,7 @@ google.setOnLoadCallback(function () {
     //Define OSM as base layer in addition to the default Google layers
     var osmMapType = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
-            return "//otile1.mqcdn.com/tiles/1.0.0/osm/" +
+            return "http://otile1.mqcdn.com/tiles/1.0.0/osm/" +
                 zoom + "/" + coord.x + "/" + coord.y + ".png";
         },
         tileSize: new google.maps.Size(256, 256),
@@ -275,7 +268,7 @@ google.setOnLoadCallback(function () {
                 (top.lat() + deltaY);
 
             //base WMS URL
-            var url = "//activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map";
+            var url = "http://activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map";
             url += "&REQUEST=GetMap"; //WMS operation
             url += "&SERVICE=WMS";    //WMS service
             url += "&VERSION=1.1.1";  //WMS version  
@@ -317,10 +310,9 @@ google.setOnLoadCallback(function () {
         var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer/0/query?where=1+%3D+1&outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz');
         closureLayer.setMap(map);
 
-        //http://wildfire.cr.usgs.gov/arcgis/services/geomac_perims/MapServer/KmlServer?Composite=false&LayerIDs=4
-
+        // Perimeters as Kml
         //var perimeterLayer = new
-        // google.maps.KmlLayer('http://wildfire.cr.usgs.gov/arcgis/services/geomac_perims/MapServer/4/outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz');
+        //google.maps.KmlLayer('http://wildfire.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2/outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz');
         //perimeterLayer.setMap(map);
     }
 
