@@ -2,21 +2,16 @@
 var kmlLayer;
 var defaultout = ['*']; //default arcgisserver rest outfields
 var maparray = [];
-
 var layer;
 var dynamap;
 var overlaymap;
-
 // keep track of highlight for devices without mouse
 var highlighted = null;
 var iw = null;
-
 var minimumlongitude = 180; //lng min
 var maximumlongitude = -180; //lng max
 var minimumlatitude = 90; //lat min
 var maximumlatitude = -90; //lat max
-
-
 var hStyle = {
     fillColor: '#ac30b5',
     fillOpacity: 0.05,
@@ -36,13 +31,11 @@ var style = {
 google.load("maps", "3", {
     other_params: "sensor=true"
 });
-
 $(document).ready(function () {
     $('#gmu').prop('selectedIndex', 0);
     $('#chunt').prop('selectedIndex', 0);
     $('#elkzone').prop('selectedIndex', 0);
 });
-
 function loadScript(url, callback) {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -61,10 +54,7 @@ function loadScript(url, callback) {
     script.src = url;
     document.getElementsByTagName("head")[0].appendChild(script);
 }
-
 google.setOnLoadCallback(function () {
-
-
     function processResultSet(rs) {
         console.log("rs:" + JSON.stringify(rs));
         var fs = rs.features;
@@ -77,15 +67,11 @@ google.setOnLoadCallback(function () {
             }
         }
     }
-
     function setupFeature(feat) {
         var html;
-
         dynamap = feat.geometry[0]; //V3 supports multiple rings, so should have only 1 element
-
         var latlng = getPolyCenter(dynamap);
         dynamap.setMap(map);
-
         google.maps.event.addListener(dynamap, 'mouseover', function () {
             highlight(dynamap, "", latlng);
         });
@@ -105,7 +91,6 @@ google.setOnLoadCallback(function () {
             });
         });
     }
-
     function getPolyCenter(poly) {
         var paths, path, latlng;
         var latar = [];
@@ -113,9 +98,7 @@ google.setOnLoadCallback(function () {
         var lat = 0;
         var lng = 0;
         var c = 0;
-
         paths = poly.getPaths();
-
         var minlat, minlng, maxlat, maxlng;
         for (var j = 0, jc = paths.getLength(); j < jc; j++) {
             path = paths.getAt(j);
@@ -123,13 +106,11 @@ google.setOnLoadCallback(function () {
                 latlng = path.getAt(k);
                 latar[k] = latlng.lat();
                 lngar[k] = latlng.lng();
-
                 lat += latlng.lat();
                 lng += latlng.lng();
                 c++;
             }
         }
-
         if (Math.min.apply(Math, latar) < minimumlatitude) {
             minimumlatitude = Math.min.apply(Math, latar);
         }
@@ -142,18 +123,15 @@ google.setOnLoadCallback(function () {
         if (Math.max.apply(Math, lngar) > maximumlongitude) {
             maximumlongitude = Math.max.apply(Math, lngar);
         }
-
         var southWest = new google.maps.LatLng(minimumlatitude, minimumlongitude);
         var northEast = new google.maps.LatLng(maximumlatitude, maximumlongitude);
         var bounds = new google.maps.LatLngBounds(southWest, northEast);
         map.fitBounds(bounds);
-
         if (c > 0) {
             return new google.maps.LatLng(lat / c, lng / c);
         }
         return false;
     }
-
     function highlight(g, html, latlng) {
         if (highlighted) {
             highlighted.setOptions(style);
@@ -173,18 +151,15 @@ google.setOnLoadCallback(function () {
         google.maps.event.trigger(map, 'resize');
         //iw.open(map);
     }
-
     function addLayer(mapname, url, lbl, lyropt, where, outfields, thisstyle, callbackfn) {
         if (where != 'ID = 420') {
             minimumlongitude = 180; //lng min
             maximumlongitude = -180; //lng max
             minimumlatitude = 90; //lat min
             maximumlatitude = -90; //lat max
-
             if (dynamap != null) {
                 dynamap.setMap(null);
             }
-
             layer = new gmaps.ags.Layer(url + '/' + lyropt);
             var params = {
                 returnGeometry: true,
@@ -197,42 +172,39 @@ google.setOnLoadCallback(function () {
             return false;
         }
     }
-
-
     loadScript("js/agslink.js", function () {
-
         $('#gmu').change(function () {
             addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Apps/Huntplanner/MapServer", $("#gmu option:selected").text(), 0, "ID = " + $('#gmu').val(), defaultout, style, function () {
             });
             $('#elkzone').prop('selectedIndex', 0);
             $('#chunt').prop('selectedIndex', 0);
         });
-
         $('#elkzone').change(function () {
             addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Apps/Huntplanner/MapServer", $("#elkzone option:selected").text(), 0, "ID = " + $('#elkzone').val(), defaultout, style, function () {
             });
             $('#gmu').prop('selectedIndex', 0);
             $('#chunt').prop('selectedIndex', 0);
         });
-
         $('#chunt').change(function () {
             addLayer(map, "https://fishandgame.idaho.gov/gis/rest/services/Apps/MapCenterQueryLayers/MapServer", $("#chunt option:selected").text(), 0, "ID = " + $('#chunt').val(), defaultout, style, function () {
             });
             $('#gmu').prop('selectedIndex', 0);
             $('#elkzone').prop('selectedIndex', 0);
         });
-
+        var opacity = 0.6;
         var perimeterURL = 'http://wildfire.cr.usgs.gov/arcgis/rest/services/GeoPerimKML/MapServer';
-        var perimeterLayer = new gmaps.ags.MapOverlay(perimeterURL);
-        perimeterLayer.setMap(map);
-
+        var perimeterLayerType = new gmaps.ags.MapType(perimeterURL, {
+          name: 'Perimeters',
+          opacity: opacity
+          });
+        map.overlayMapTypes.insertAt(1, perimeterLayerType);
+        //var perimeterLayer = new gmaps.ags.MapOverlay(perimeterURL);
+        //perimeterLayer.setMap(map);
         var sm = $($(":jqmData(slidemenu)").data('slidemenu'));
         if (viewport().width > 900) {
             slidemenu(sm);
         }
-
     });
-
     var josefov = new google.maps.LatLng(45.3119, -116.67029);
     //Define OSM as base layer in addition to the default Google layers
     var osmMapType = new google.maps.ImageMapType({
@@ -247,7 +219,6 @@ google.setOnLoadCallback(function () {
         maxZoom: 19,
         opacity: 0.7
     });
-
     //Define custom WMS tiled layer
     var SLPLayer = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
@@ -256,17 +227,14 @@ google.setOnLoadCallback(function () {
             // get Long Lat coordinates
             var top = proj.fromPointToLatLng(new google.maps.Point(coord.x * 256 / zfactor, coord.y * 256 / zfactor));
             var bot = proj.fromPointToLatLng(new google.maps.Point((coord.x + 1) * 256 / zfactor, (coord.y + 1) * 256 / zfactor));
-
             //corrections for the slight shift of the SLP (mapserver)
             var deltaX = 0.0013;
             var deltaY = 0.00058;
-
             //create the Bounding box string
             var bbox = (top.lng() + deltaX) + "," +
                 (bot.lat() + deltaY) + "," +
                 (bot.lng() + deltaX) + "," +
                 (top.lat() + deltaY);
-
             //base WMS URL
             var url = "http://activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map";
             url += "&REQUEST=GetMap"; //WMS operation
@@ -282,13 +250,10 @@ google.setOnLoadCallback(function () {
             url += "&WIDTH=256";         //tile size in google
             url += "&HEIGHT=256";
             return url;                 // return URL for the tile
-
         },
         tileSize: new google.maps.Size(256, 256),
         isPng: true
     });
-
-
     function initialize() {
         var mapOptions = {
             zoom: 7,
@@ -305,18 +270,9 @@ google.setOnLoadCallback(function () {
         //add WMS layer
         SLPLayer.setOpacity(0.4);
         map.overlayMapTypes.push(SLPLayer);
-
-
         var closureLayer = new google.maps.KmlLayer('https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer/0/query?where=1+%3D+1&outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz');
         closureLayer.setMap(map);
-
-        // Perimeters as Kml
-        //var perimeterLayer = new
-        //google.maps.KmlLayer('http://wildfire.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2/outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz');
-        //perimeterLayer.setMap(map);
     }
-
-
     function kml(surl) {
         if (surl != "") {
             //clearOverlays();
@@ -328,10 +284,7 @@ google.setOnLoadCallback(function () {
             map.currentLayer = kmlLayer;
         }
     }
-
-
     initialize();
-
     $("#clearmap").click(
         function () {
             dynamap.setMap(null);
@@ -341,4 +294,3 @@ google.setOnLoadCallback(function () {
         }
     );
 });
- 
