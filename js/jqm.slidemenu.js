@@ -10,14 +10,13 @@ $(document).on("pageinit",":jqmData(role='page')", function(){
 	$(document).on("swiperight",":jqmData(role='page')", function(){
 		slidemenu(sm);
 	});*/
-	$(document).on("click", ":jqmData(slidemenu)", function(event) {
+	$('#slidemenu-menu').on("click", function(event) {
 		event.stopImmediatePropagation();
 		slidemenu(sm);
 	});
 	/* Added to close menu on selections */
-	$(document).on("click", "a:not(:jqmData(slidemenu))", function(e) {
-		only_close = true;
-		slidemenu(sm, only_close);
+	$('#slidemenu a').on("click", function(e) {
+		slidemenu(sm, true);
 	});
 	$("select").change(function () {
 		only_close = true;
