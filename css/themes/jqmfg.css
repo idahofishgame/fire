@@ -1014,3 +1014,5 @@ a.ui-link-inherit {
 	outline-width: 1px;
 	outline-style: dotted;
 }
+#slidemenu-menu:after {content:"Map Controls"; position:absolute; top:2px; left:36px; font-size:10px; text-align:left; line-height:11px;}
+.header.ui-header.ui-bar-a.ui-header-fixed.slidedown.ui-fixed-hidden { position: fixed;}
