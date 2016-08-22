@@ -229,7 +229,7 @@ google.setOnLoadCallback(function () {
         
         function identify(evt) {
   clearOverlays();
-  if (res) 
+  if (res)
     res.length = 0;
     svc.identify({
     'geometry': evt.latLng,
@@ -297,18 +297,11 @@ function addResultToMap(idresults, latlng) {
               }
               prev_iw = iw;
               iw.open(map);
-              
             }
           }
         }
-
-
-
-
-
-
     });
-    var josefov = new google.maps.LatLng(45.3119, -116.67029);
+    var josefov = new google.maps.LatLng(45.319, -114.531);
     //Define custom WMS tiled layer
     var SLPLayer = new google.maps.ImageMapType({
         getTileUrl: function (coord, zoom) {
@@ -350,6 +343,12 @@ function addResultToMap(idresults, latlng) {
             zoom: 7,
             center: josefov,
             scaleControl: true,
+            zoomControlOptions: {
+               position: google.maps.ControlPosition.LEFT_TOP
+            },
+            streetViewControlOptions: {
+              position: google.maps.ControlPosition.LEFT_TOP
+            },
             mapTypeControlOptions: {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.TERRAIN],
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
