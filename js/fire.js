@@ -18,16 +18,16 @@ var maximumlatitude = -90; //lat max
 var res,ovs, iw = [];
 var prev_iw = false;
 var ovOptions = {
-  polylineOptions: {
-    strokeColor: '#FF0000',
-    strokeWeight: 4
-  },
-  polygonOptions: {
-    fillColor: '#FFFF99',
-    fillOpacity: 0.5,
-    strokeWeight: 2,
-    strokeColor: '#FF0000'
-  }
+    polylineOptions: {
+        strokeColor: '#FF0000',
+        strokeWeight: 4
+    },
+    polygonOptions: {
+        fillColor: '#FFFF99',
+        fillOpacity: 0.5,
+        strokeWeight: 2,
+        strokeColor: '#FF0000'
+    }
 };
 var hStyle = {
     fillColor: '#ac30b5',
@@ -205,100 +205,101 @@ google.setOnLoadCallback(function () {
             $('#elkzone').prop('selectedIndex', 0);
         });
         var opacity = 0.6;
-        var perimeterURL = 'http://wildfire.cr.usgs.gov/arcgis/rest/services/GeoPerimKML/MapServer';
+        var perimeterURL = 'https://wildfire.cr.usgs.gov/arcgis/rest/services/GeoPerimKML/MapServer';
+        //var perimeterURL = 'https://wildfire.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2';
         var perimeterLayerType = new gmaps.ags.MapType(perimeterURL, {
-          name: 'Perimeters',
-          opacity: opacity
-          });
+            name: 'Perimeters',
+            opacity: opacity
+        });
         map.overlayMapTypes.insertAt(1, perimeterLayerType);
         var closureURL = 'https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer';
         svc = new gmaps.ags.MapService(closureURL);
-  var closure = new gmaps.ags.MapOverlay(svc, {
-    'opacity': 0.8
-  });
-  closure.setMap(map);
+        var closure = new gmaps.ags.MapOverlay(svc, {
+            'opacity': 0.8
+        });
+        closure.setMap(map);
         google.maps.event.addListener(map, 'click', identify);
         google.maps.event.addListener(map, 'mouseover', function () {
-           map.setOptions({ draggableCursor: 'crosshair' });
+            map.setOptions({ draggableCursor: 'crosshair' });
         });
 
         var sm = $($(":jqmData(slidemenu)").data('slidemenu'));
         if (viewport().width > 900) {
             slidemenu(sm);
         }
-        
+
         function identify(evt) {
-  clearOverlays();
-  if (res)
-    res.length = 0;
-    svc.identify({
-    'geometry': evt.latLng,
-    'tolerance': 3,
-    'layerIds': [0],
-    'layerOption': 'all',
-    'bounds': map.getBounds(),
-    'width': map.getDiv().offsetWidth,
-    'height': map.getDiv().offsetHeight,
-    'overlayOptions': ovOptions
-  }, function(results, err) {
-    if (err) {
-      console.log(err.message + err.details.join('\n'));
-    } else {
-      addResultToMap(results, evt.latLng);
-    }
-  });
-}
-
-function clearOverlays() {
-  if (ovs) {
-    for (var i = 0; i < ovs.length; i++) {
-      ovs[i].setMap(null);
-    }
-    ovs.length = 0;
-  }
-}
-
-function addResultToMap(idresults, latlng) {
-          res = idresults.results;
-          layers = { "0": []};
-          for (var i = 0; i < res.length; i++) {
-            var result = res[i];
-            layers[result['layerId']].push(result);
-          }
-          // the following code based on ESRI sample
-          // create and show the info-window with tabs, one for each map service layer
-          for (var layerId in layers) {
-            var results = layers[layerId];
-            var count = results.length;
-            var content = "";
-            switch(layerId) {
-              case "0":
-                if (count == 0) break;
-                for (var j = 0; j < count; j++) {
-                  var attributes = results[j].feature.attributes;
-                  var url = attributes["URL"];
-                  var start = url.indexOf("://");
-                  url = url.substring(start+3);
-                  if (url.length > 40) {
-                    url = url.substring(0,40) + "...";
-                  }
-                  content += "<div><strong>" + attributes["NAME"]  + "</strong><br/>";
-                  content += "Updated: " + attributes["UPDATE_"] + "<br/>Link: <a href='" + attributes["URL"]  + "' title='More Information'>" + url + "</a></div>";
+            clearOverlays();
+            if (res)
+                res.length = 0;
+            svc.identify({
+                'geometry': evt.latLng,
+                'tolerance': 3,
+                'layerIds': [0],
+                'layerOption': 'all',
+                'bounds': map.getBounds(),
+                'width': map.getDiv().offsetWidth,
+                'height': map.getDiv().offsetHeight,
+                'overlayOptions': ovOptions
+            }, function(results, err) {
+                if (err) {
+                    console.log(err.message + err.details.join('\n'));
+                } else {
+                    addResultToMap(results, evt.latLng);
                 }
-                break;
+            });
+        }
+
+        function clearOverlays() {
+            if (ovs) {
+                for (var i = 0; i < ovs.length; i++) {
+                    ovs[i].setMap(null);
+                }
+                ovs.length = 0;
             }
-            if (content != "") {
-              var iw = new google.maps.InfoWindow({
-                content: content,
-                position: latlng
-              });
-              if (prev_iw) {
-                prev_iw.close();
-              }
-              prev_iw = iw;
-              iw.open(map);
+        }
+
+        function addResultToMap(idresults, latlng) {
+            res = idresults.results;
+            layers = { "0": []};
+            for (var i = 0; i < res.length; i++) {
+                var result = res[i];
+                layers[result['layerId']].push(result);
             }
-          }
+            // the following code based on ESRI sample
+            // create and show the info-window with tabs, one for each map service layer
+            for (var layerId in layers) {
+                var results = layers[layerId];
+                var count = results.length;
+                var content = "";
+                switch(layerId) {
+                    case "0":
+                        if (count == 0) break;
+                        for (var j = 0; j < count; j++) {
+                            var attributes = results[j].feature.attributes;
+                            var url = attributes["URL"];
+                            var start = url.indexOf("://");
+                            url = url.substring(start+3);
+                            if (url.length > 40) {
+                                url = url.substring(0,40) + "...";
+                            }
+                            content += "<div><strong>" + attributes["NAME"]  + "</strong><br/>";
+                            content += "Updated: " + attributes["UPDATE_"] + "<br/>Link: <a href='" + attributes["URL"]  + "' title='More Information'>" + url + "</a></div>";
+                        }
+                        break;
+                }
+                if (content != "") {
+                    var iw = new google.maps.InfoWindow({
+                        content: content,
+                        position: latlng
+                    });
+                    if (prev_iw) {
+                        prev_iw.close();
+                    }
+                    prev_iw = iw;
+                    iw.open(map);
+                }
+            }
         }
     });
     var josefov = new google.maps.LatLng(45.319, -114.531);
@@ -319,7 +320,7 @@ function addResultToMap(idresults, latlng) {
                 (bot.lng() + deltaX) + "," +
                 (top.lat() + deltaY);
             //base WMS URL
-            var url = "http://activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map";
+            var url = "https://fsapps.nwcg.gov/afm/cgi-bin/mapserv.exe?map=conus.map";
             url += "&REQUEST=GetMap"; //WMS operation
             url += "&SERVICE=WMS";    //WMS service
             url += "&VERSION=1.1.1";  //WMS version  
@@ -333,7 +334,7 @@ function addResultToMap(idresults, latlng) {
             url += "&WIDTH=256";         //tile size in google
             url += "&HEIGHT=256";
             return url;                 // return URL for the tile
-						console.log(url);
+            console.log(url);
         },
         tileSize: new google.maps.Size(256, 256),
         isPng: true
@@ -344,10 +345,10 @@ function addResultToMap(idresults, latlng) {
             center: josefov,
             scaleControl: true,
             zoomControlOptions: {
-               position: google.maps.ControlPosition.LEFT_TOP
+                position: google.maps.ControlPosition.LEFT_TOP
             },
             streetViewControlOptions: {
-              position: google.maps.ControlPosition.LEFT_TOP
+                position: google.maps.ControlPosition.LEFT_TOP
             },
             mapTypeControlOptions: {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.TERRAIN],
