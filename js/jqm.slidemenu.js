@@ -3,8 +3,8 @@ $(document).on("pageinit",":jqmData(role='page')", function(){
 	$(":jqmData(slidemenu)").addClass('slidemenu_btn');
 	var sm = $($(":jqmData(slidemenu)").data('slidemenu'));
 	sm.addClass('slidemenu');
-	/* Hidden because swipe interferes with google maps controls */
-	/*$(document).on("swipeleft",":jqmData(role='page')", function(){
+	/* Hidden because swipe interferes with google maps controls 
+	$(document).on("swipeleft",":jqmData(role='page')", function(){
 		slidemenu(sm);
 	});
 	$(document).on("swiperight",":jqmData(role='page')", function(){
