@@ -43,8 +43,9 @@
 
 .slidemenu ul li {
 	list-style-type: none;
-	margin: 0px 0;
+	margin: 0;
 }
+
 .slidemenu div {
 	color: #D3DEEA;
 	font-size: 14px;
