@@ -9,34 +9,33 @@
 <body> 
 <div data-role="page">
 		<div data-role="header" data-position="inline">
-			<a href="http://fishandgame.idaho.gov/ifwis/maps/realtime/fire/" data-role="button" data-rel="back" data-theme="a" data-icon="back">Back</a>
+			<a href="https://idfg.idaho.gov/ifwis/maps/realtime/fire/" data-role="button" data-rel="back" data-theme="a" data-icon="back">Back</a>
 			<h1>About</h1>
 		</div>
 		<div data-role="content">
 			<h1>Real-Time Fires with Hunt Areas</h1>
 			<p>This application displays real-time fire information from MODIS Fire Detections and USGS Active Fire Perimeters alongside the most recent Fire Emergency Area Closures for Idaho from <a rel="external" href="http://inciweb.nwcg.gov/state/closures/13/">Idaho InciWeb Closures</a>. The Fire Emergency Closures are for closure areas, not specific roads and trails. For details on road and trail closures visit the InciWeb Closures website.</p>
-			<p>Hunt boundaries for Controlled Hunts, Game Management Units and Elk Zones may be added by selecting a hunt from the left-hand menu.  For more layers and options visit the Idaho Fish and Game <a href="http://fishandgame.idaho.gov/ifwis/huntplanner/mapcenter/" title="MapCenter" rel="external">Huntplanner MapCenter</a>.</p>
+			<p>Hunt boundaries for Controlled Hunts, Game Management Units and Elk Zones may be added by selecting a hunt from the left-hand menu.  For more layers and options visit the Idaho Fish and Game <a href="https://idfg.idaho.gov/ifwis/huntplanner/mapcenter/" title="MapCenter" rel="external">Huntplanner MapCenter</a>.</p>
 			<p>Background terrain maps, road maps and aerial imagery may be interchanged by toggling the map dropdown in the upper-right.</p>
 			<h2>Data Sources</h2>
 			<p>This application is constructed by "mashing up" publicly-available data sources from InciWeb, U.S. Forest Service, USGS, Idaho Fish and Wildlife Information System at Idaho Fish and Game, MapQuest OpenStreetMap and Google Maps.</p>
 			<ul>
         <li><a rel="external" href="http://inciweb.nwcg.gov/state/closures/13/">InciWeb Incident Information System Idaho Closures</a></li>
-        <li><a rel="external" href="http://activefiremaps.fs.fed.us/cgi-bin/mapserv.exe?map=conus.map">ActiveFireMaps WMS Tiled Layer</a></li>
-        <li><a rel="external" href="http://wildfire.cr.usgs.gov/arcgis/rest/services/GeoPerimKML/MapServer">USGS Active Geomac Perimeters Layer</a></li>
-        <li><a rel="external" href="http://data.idfggis.opendata.arcgis.com/datasets/0758e543fca347af9c8bc8979f684425_0">Idaho Fish and Wildlife Information System Open Data</a></li>
-        <li><a rel="external" href="http://wiki.openstreetmap.org/wiki/Mapquest#MapQuest-hosted_map_tiles">MapQuest OpenStreetMap Tile Service</a></li>
+        <li><a rel="external" href="https://fsapps.nwcg.gov/afm/wms.php">ActiveFireMaps WMS Tiled Layer</a></li>
+        <li><a rel="external" href="https://wildfire.cr.usgs.gov/arcgis/rest/services/GeoPerimKML/MapServer">USGS Active Geomac Perimeters Layer</a></li>
+        <li><a rel="external" href="https://data-idfggis.opendata.arcgis.com">IDFG GIS Data Catalog</a></li>
         <li><a rel="external" href="https://developers.google.com/maps/documentation/javascript/">Google Maps Javascript API V3 </a></li>
       </ul>
 			<h3>GIS Data Downloads</h3>
 			<ul>
-				<li>Real-Time MODIS Fire Detections Layer (<a rel="external" href="http://activefiremaps.fs.fed.us/googleearth.php">kml</a>, <a rel="external" href="http://activefiremaps.fs.fed.us/gisdata.php">shp</a>, <a rel="external" href="http://activefiremaps.fs.fed.us/wms.php">wms</a>)</li>
-				<li>Fire Closures maintained by IDFG, Boise NF and wildfire incident management teams. (<a rel="external" href="https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer/0">ArcGIS Map Server</a>, <a rel="external" href="https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer/0/query?where=1+%3D+1&outFields=*&returnGeometry=true&outSR=4326&returnIdsOnly=false&returnCountOnly=false&f=kmz">Google Earth Layer</a>) </li>
+				<li>Real-Time MODIS Fire Detections Layer (<a rel="external" href="https://fsapps.nwcg.gov/afm/">kml, shp, wfs, wms</a>)</li>
+				<li>Fire Closures maintained by IDFG, Boise NF and wildfire incident management teams. (<a rel="external" href="https://data-idfggis.opendata.arcgis.com/datasets/wildfire-emergency-closures">api, kml, shp</a>) </li>
 			</ul>
       <h3>Change Log for Emergency Closure Areas</h3>
-      <p>See <a rel="external" href="https://fishandgame.idaho.gov/gis/rest/services/External/InciWeb_FireClosures/MapServer/0">layer description</a> for change history.</p>
+      <p>See <a rel="external" href="https://data-idfggis.opendata.arcgis.com/datasets/wildfire-emergency-closures">layer description</a> for change history.</p>
       <h3>Code</h3>
-      <p>Application developed by <a rel="external" href="https://fishandgame.idaho.gov/ifwis/portal">Idaho Fish and Wildlife Information System</a> at Idaho Fish and Game.  Code public domain and available on <a rel="external" href="https://github.com/idahofishgame/fire">GitHub</a><p>
-			<a href="http://fishandgame.idaho.gov/ifwis/maps/realtime/fire/" data-role="button" data-rel="back" data-theme="a" data-icon="back">Back</a>       
+      <p>Application developed by <a rel="external" href="https://idfg.idaho.gov/data">Idaho Fish and Wildlife Information System</a> at Idaho Fish and Game.  Code public domain and available on <a rel="external" href="https://github.com/idahofishgame/fire">GitHub</a><p>
+			<a href="https://idfg.idaho.gov/ifwis/maps/realtime/fire/" data-role="button" data-rel="back" data-theme="a" data-icon="back">Back</a>       
 		</div>
 	</div>
 </body>
