@@ -318,20 +318,22 @@ function addResultToMap(idresults, latlng) {
                 (bot.lat() + deltaY) + "," +
                 (bot.lng() + deltaX) + "," +
                 (top.lat() + deltaY);
+
             //base WMS URL
-            var url = "https://fsapps.nwcg.gov/afm/cgi-bin/mapserv.exe?map=conus.map";
-            url += "&REQUEST=GetMap"; //WMS operation
-            url += "&SERVICE=WMS";    //WMS service
-            url += "&VERSION=1.1.1";  //WMS version  
+            var url = "https://fsapps.nwcg.gov/afm/cgi-bin/mapserv.exe?map=conus.map&SERVICE=WMS&REQUEST=GetMap&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&VERSION=1.1.1&LAYERS=Cumulative%20Fire%20Detections,Last%2024%20hour%20fire%20detections,Last%2012%20hour%20fire%20detections,Last%206%20hour%20fire%20detections&WIDTH=256&HEIGHT=256&SRS=EPSG:4269&BBOX=" + bbox;
+            // var url = "https://fsapps.nwcg.gov/afm/cgi-bin/mapserv.exe?map=conus.map&SERVICE=WMS";
+            // url += "&REQUEST=GetMap"; //WMS operation
+            // url += "&SERVICE=WMS";    //WMS service
+            // url += "&VERSION=1.1.1";  //WMS version  
             //url += "&LAYERS=" + "Last 12 hour fire detections,Last 6 hour fire detections,Current Large incidents,Cumulative MODIS fire detections for current year"; //WMS layers
-            url += "&LAYERS=" + "Last 6 hour fire detections,Cumulative Fire Detections,Last 24 hour fire detections,Last 12 hour fire detections"; //WMS layers
-            url += "&FORMAT=image/png"; //WMS format
-            url += "&BGCOLOR=0xFFFFFF";
-            url += "&TRANSPARENT=TRUE";
-            url += "&SRS=EPSG:4269";     //set WGS84 
-            url += "&BBOX=" + bbox;      // set bounding box
-            url += "&WIDTH=256";         //tile size in google
-            url += "&HEIGHT=256";
+            // url += "&LAYERS=" + "Last 6 hour fire detections,Cumulative Fire Detections,Last 24 hour fire detections,Last 12 hour fire detections"; //WMS layers
+            // url += "&FORMAT=image/png"; //WMS format
+            // url += "&BGCOLOR=0xFFFFFF";
+            // url += "&TRANSPARENT=TRUE";
+            // url += "&SRS=EPSG:4269";     //set WGS84 
+            // url += "&BBOX=" + bbox;      // set bounding box
+            // url += "&WIDTH=256";         //tile size in google
+            // url += "&HEIGHT=256";
             return url;                 // return URL for the tile
         },
         tileSize: new google.maps.Size(256, 256),
