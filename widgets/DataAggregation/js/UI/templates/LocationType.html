@@ -3,7 +3,9 @@
     <tbody>
       <tr>
         <td colspan="3" class="panel-title-td">
-          <div class="panel-title-text">${nls.mapping.locationMapping}</div>
+          <div class="panel-title-text" tabindex="0" role="region"
+            aria-label="${nls.mapping.locationMapping} ${nls.locationMapping.locationMappingPageHint}">
+            ${nls.mapping.locationMapping}</div>
         </td>
       </tr>
       <tr class="bottom-border-bold task-instruction-row">
@@ -11,15 +13,19 @@
           <div class="instruction">${nls.locationMapping.locationMappingPageHint}</div>
         </td>
       </tr>
-      <tr class="task-row task-instruction-row" data-dojo-attach-event="onClick:_rdoAddressClick">
+      <tr class="task-row task-instruction-row" > 
         <td class="field-control-td pad-left-10">
           <input name="lt" data-dojo-type="dijit/form/RadioButton"
                  class="jimu-radio-btn"
-                 id="rdo-address"
+                 id="${id}_rdo-address"
                  type="radio"
                  data-dojo-attach-point="rdoAddress"
-                 title="${nls.locationMapping.useAddress}" />
-          <label class="main-text" for="rdo-address">${nls.locationMapping.useAddress}</label>
+                 title="${nls.locationMapping.useAddress}" 
+                 tabindex="0" 
+                 aria-label="${nls.locationMapping.useAddress} ${nls.locationMapping.useAddressHint}"
+                 data-dojo-attach-event="onClick:_rdoAddressClick"
+                 role="radio"/>
+          <label class="main-text" for="${id}_rdo-address">${nls.locationMapping.useAddress}</label>
         </td>
       </tr>
       <tr class="bottom-border task-instruction-row">
@@ -27,15 +33,19 @@
           <span class="instruction">${nls.locationMapping.useAddressHint}</span>
         </td>
       </tr>
-      <tr class="task-instruction-row task-row" data-dojo-attach-event="onClick:_rdoCoordinateClick">
+      <tr class="task-instruction-row task-row">
         <td class="field-control-td pad-left-10">
           <input name="lt" data-dojo-type="dijit/form/RadioButton"
                  class="jimu-radio-btn"
-                 id="rdo-coordinate"
+                 id="${id}_rdo-coordinate"
                  type="radio"
                  data-dojo-attach-point="rdoCoordinates"
-                 title="${nls.locationMapping.useCoordinates}" />
-          <label class="main-text" for="rdo-coordinate">${nls.locationMapping.useCoordinates}</label>
+                 title="${nls.locationMapping.useCoordinates}" 
+                 tabindex="0"
+                 aria-label="${nls.locationMapping.useCoordinates} ${nls.locationMapping.useCoordinatesHint}"
+                 data-dojo-attach-event="onClick:_rdoCoordinateClick"
+                 role="radio"/>
+          <label class="main-text" for="${id}_rdo-coordinate">${nls.locationMapping.useCoordinates}</label>
         </td>
       </tr>
       <tr class="bottom-border task-instruction-row">

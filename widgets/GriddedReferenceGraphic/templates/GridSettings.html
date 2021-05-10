@@ -7,7 +7,7 @@
         <div class="GRGDrafterFullWidth GRGDrafterSettingRow" data-dojo-attach-point="gridShapeContainer">
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis" title="${nls.gridSettings.cellShape}">
                 ${nls.gridSettings.cellShape}</div>
-            <select data-dojo-attach-point="cellShape" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select class="GRGcellShapeSelect" data-dojo-attach-point="cellShape" style="width: 100%" data-dojo-type="jimu/dijit/formSelect" aria-label="${nls.gridSettings.cellShape}">
             </select>
         </div>
         
@@ -15,7 +15,7 @@
         <div class="GRGDrafterFullWidth GRGDrafterSettingRow" data-dojo-attach-point="gridUnitsContainer">
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis" title="${nls.gridSettings.cellUnits}">
                 ${nls.gridSettings.cellUnits}</div>
-            <select data-dojo-attach-point="cellUnits" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select data-dojo-attach-point="cellUnits" style="width: 100%" data-dojo-type="jimu/dijit/formSelect" aria-label="${nls.gridSettings.cellUnits}">
             </select>
         </div>
         
@@ -23,7 +23,7 @@
         <div class="GRGDrafterFullWidth GRGDrafterSettingRow" data-dojo-attach-point="gridOriginContainer">
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis" title="${nls.gridSettings.gridOrigin}">
                 ${nls.gridSettings.gridOrigin}</div>
-            <select data-dojo-attach-point="gridOrigin" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select data-dojo-attach-point="gridOrigin" style="width: 100%" data-dojo-type="jimu/dijit/formSelect" aria-label="${nls.gridSettings.gridOrigin}">
             </select>
         </div>
         
@@ -33,7 +33,7 @@
                 ${nls.gridSettings.gridReferenceSystem}</div>
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis labelRight" title="${nls.gridSettings.gridDatum}">
                 ${nls.gridSettings.gridDatum}</div>
-            <select data-dojo-attach-point="referenceSystem" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select class="referenceSystemSelect" data-dojo-attach-point="referenceSystem" style="width: 100%" data-dojo-type="jimu/dijit/formSelect" aria-label="${nls.gridSettings.gridDatum}">
             </select>
         </div>
         
@@ -58,7 +58,8 @@
         <div class="GRGDrafterFullWidth GRGDrafterSettingRow" data-dojo-attach-point="labelStartPositionContainer">
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis" title="${nls.gridSettings.labelStartPosition}">
                 ${nls.gridSettings.labelStartPosition}</div>
-            <select data-dojo-attach-point="labelStartPosition" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select class="GRGlabelStartPositionSelect" data-dojo-attach-point="labelStartPosition" style="width: 100%" data-dojo-type="jimu/dijit/formSelect"
+                aria-label="${nls.gridSettings.labelStartPosition}" role="listbox">
             </select>
         </div>
         
@@ -66,7 +67,8 @@
         <div class="GRGDrafterFullWidth GRGDrafterSettingRow" data-dojo-attach-point="labelStyleContainer">
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis" title="${nls.gridSettings.labelType}">
                 ${nls.gridSettings.labelType}</div>
-            <select data-dojo-attach-point="labelType" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select data-dojo-attach-point="labelType" style="width: 100%" data-dojo-type="jimu/dijit/formSelect" 
+                aria-label="${nls.gridSettings.labelType}">
             </select>
         </div>
         
@@ -74,7 +76,8 @@
         <div class="GRGDrafterFullWidth GRGDrafterSettingRow" data-dojo-attach-point="labelStyleWithRefSysContainer">
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis" title="${nls.gridSettings.labelType}">
                 ${nls.gridSettings.labelType}</div>
-            <select data-dojo-attach-point="labelTypeWithRefSys" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select data-dojo-attach-point="labelTypeWithRefSys" style="width: 100%" data-dojo-type="jimu/dijit/formSelect" 
+                aria-label="${nls.gridSettings.labelType}">
             </select>
         </div>
         
@@ -82,7 +85,8 @@
         <div class="GRGDrafterFullWidth GRGDrafterSettingRow" data-dojo-attach-point="labelDirectionContainer">
             <div class="GRGDrafterDropdownLabel GRGDrafterEllipsis" title="${nls.gridSettings.labelDirection}">
                 ${nls.gridSettings.labelDirection}</div>
-            <select data-dojo-attach-point="labelDirection" style="width: 100%" data-dojo-type="dijit/form/Select">
+            <select data-dojo-attach-point="labelDirection" style="width: 100%" data-dojo-type="jimu/dijit/formSelect" 
+                aria-label="${nls.gridSettings.labelDirection}">
             </select>
         </div>
         

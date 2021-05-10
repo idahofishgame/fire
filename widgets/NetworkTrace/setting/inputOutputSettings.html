@@ -1,17 +1,13 @@
 <div>
-    <div>
-        <fieldset class="esriCTFieldset">
-            <legend class="esriCTLegendTitle">${nls.inputOutputTab.inputSettingsLabel}</legend>
-            <div data-dojo-attach-point="inputTableNode">
-            </div>
-        </fieldset>
+    <!-- Input table node -->
+    <div class="esriCTClearBoth esriCTInputTableParentContainer">
+        <div data-dojo-attach-point="inputTableNode">
+        </div>
     </div>
-
-    <div class="esriCTOutPutSettingsParent">
-        <fieldset class="esriCTFieldset">
-            <legend class="esriCTLegendTitle">${nls.inputOutputTab.outputSettingsLabel}</legend>
-            <div data-dojo-attach-point="outputTableNode">
-            </div>
-        </fieldset>
+    <!-- Summary text -->
+    <div class="esriCTClearBoth esriCTSummaryTextParentContainer">${nls.inputOutputTab.summaryTextTitle}</div>
+    <!-- Summary text container -->
+    <div class="esriCTClearBoth esriCTInputEditorParentContainer">
+        <div data-dojo-attach-point="inputEditorContainer"></div>
     </div>
 </div>

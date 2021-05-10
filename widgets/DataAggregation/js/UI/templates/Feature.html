@@ -1,7 +1,8 @@
 <div class="pad-left-5 no-select">
 
   <!-- Title table -->
-  <table class="page-table display-none table-layout" cellpading="0" data-dojo-attach-point="featureTitleTable">
+  <table class="page-table display-none table-layout" cellpading="0" data-dojo-attach-point="featureTitleTable"
+    tabindex="0" role="region">
     <tbody>
       <tr>
         <td class="panel-title-td">
@@ -21,7 +22,8 @@
     <tbody>
       <tr class="bottom-border task-instruction-row">
         <td data-dojo-attach-point="reviewRowRecordTd" class="pad-bottom-10 pad-top-10">
-          <span class="float-left main-text pad-right-10 display-none pad-left-5" data-dojo-attach-point="reviewText" style="line-height:30px;">${nls.review.item}</span>
+          <span class="float-left main-text pad-right-10 display-none pad-left-5" data-dojo-attach-point="reviewText"
+            style="line-height:30px;">${nls.review.item}</span>
           <div data-dojo-attach-point="_duplicateFlag" class="pad-bottom-10 duplicate-flag"></div>
         </td>
         <td class="pad-bottom-10 pad-top-10 feature-toolbar-td">
@@ -36,14 +38,16 @@
   <!--feature toggle table-->
   <table data-dojo-attach-point="featureToggleTable" class="page-table display-none table-layout" cellpading="0">
     <tbody>
-      <tr class="bottom-border toggle-expand-row" data-dojo-attach-event="onclick:_toggleFeature">
+      <tr class="bottom-border toggle-expand-row" data-dojo-attach-point="featureTr" data-dojo-attach-event="onclick:_toggleFeature  , onkeydown:_toggleFeature" tabindex="0"
+        role="button" aria-label="${nls.review.feature}" aria-expanded="false">
         <td colspan="2" class="field-control-td text-left field-row-width pad-left-5">
           <div class="font-size-med main-text float-left">
             ${nls.review.feature}
           </div>
         </td>
         <td style="width: 20px;" nowrap class="page-item-td-nav" data-dojo-attach-point="featureTd">
-          <div class="float-right bg-img-toggle bg-toggle-down-img margin-left-5" data-dojo-attach-point="toggleFeature"></div>
+          <div class="float-right bg-img-toggle bg-toggle-down-img margin-left-5"
+            data-dojo-attach-point="toggleFeature"></div>
         </td>
       </tr>
     </tbody>
@@ -63,16 +67,19 @@
   </div>
 
   <!--location toggle table-->
-  <table data-dojo-attach-point="locationControlToggleTable" class="page-table display-none table-layout" cellpading="0">
+  <table data-dojo-attach-point="locationControlToggleTable" class="page-table display-none table-layout"
+    cellpading="0">
     <tbody>
-      <tr class="bottom-border toggle-expand-row" data-dojo-attach-event="onclick:_toggleLocation">
+      <tr class="bottom-border toggle-expand-row"  data-dojo-attach-point="locationTr" data-dojo-attach-event="onclick:_toggleLocation , onkeydown:_toggleLocation" tabindex="0"
+        role="button" aria-label="${nls.review.locationInfo}" aria-expanded="false">
         <td class="field-control-td text-left field-row-width pad-left-5">
           <div class="font-size-med main-text float-left">
             ${nls.review.locationInfo}
           </div>
         </td>
         <td style="width: 20px;" class="page-item-td-nav" data-dojo-attach-point="locationTd">
-          <div class="float-right bg-img-toggle bg-toggle-down-img margin-left-5" data-dojo-attach-point="toggleLocation"></div>
+          <div class="float-right bg-img-toggle bg-toggle-down-img margin-left-5"
+            data-dojo-attach-point="toggleLocation"></div>
         </td>
       </tr>
   </table>
@@ -87,10 +94,13 @@
             <div class="instruction" data-dojo-attach-point="locationHint">${nls.review.locationControlHint}</div>
           </td>
           <td class="field-control-td" title="${nls.review.sync}">
-            <div class="float-right bg-ft-img bg-sync feature-toolbar-btn" data-dojo-attach-point="syncFields" data-dojo-attach-event="onclick:_syncAddressInfo"></div>
+            <div class="float-right bg-ft-img bg-sync feature-toolbar-btn" data-dojo-attach-point="syncFields"
+              data-dojo-attach-event="onclick:_syncAddressInfo , keydown:_syncAddressInfo"
+              role="button" aria-label="${nls.review.sync}"></div>
           </td>
           <td title="${nls.featureToolbar.locate}">
-            <div class="bg-ft-img bg-locate feature-toolbar-btn float-right" data-dojo-attach-point="locateButton" data-dojo-attach-event="onclick:_locate">
+            <div class="bg-ft-img bg-locate feature-toolbar-btn float-right" data-dojo-attach-point="locateButton"
+              data-dojo-attach-event="onclick:_locate , keydown:_locate" role="button" aria-label="${nls.featureToolbar.locate}">
             </div>
           </td>
         </tr>

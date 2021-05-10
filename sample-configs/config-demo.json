@@ -5,7 +5,7 @@
   "portalUrl": "http://www.arcgis.com",
   "appId": "",
   "title": "ArcGIS Web Application - Demo Widgets",
-  "subtitle": "with Web AppBuilder for ArcGIS",
+  "subtitle": "with ArcGIS Web AppBuilder",
   "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
   "links": [
     {

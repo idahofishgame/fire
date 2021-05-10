@@ -5,6 +5,14 @@
       <span class="esriCTBtnAddLabel" data-dojo-attach-point="addFieldLabel">
         ${nls.analysisTab.addFieldsLabel}</span>
     </div>
+    <div class="esriCTGroupByFieldContainer">
+      <div data-dojo-type="jimu/dijit/CheckBox" data-dojo-attach-point="groupByFieldCheckBox"
+        class="esriCTGroupByFieldCheckBox" checked="true"></div>
+      <div class="esriCTGroupByFieldColumnLabel">
+        ${nls.analysisTab.allowGroupingLabel}
+      </div>
+      <div class="esriCTHint">${nls.analysisTab.groupingHintDescription}</div>
+    </div>
     <div class="esriCTHidden esriCTNoLayersOrFieldsForAnalysisLabel" data-dojo-attach-point="lblNoValidFields">
       ${nls.analysisTab.noValidFieldsForAnalysis}
     </div>

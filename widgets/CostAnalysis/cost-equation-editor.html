@@ -9,13 +9,13 @@
           <div class="esriCTEditCostEquationLabel esriCTFullWidth esriCTEllipsis"  title="${nls.workBench.geographyTitle}">
             ${nls.workBench.geographyTitle}</div>
           <div class="esriCTEditCostEquationInput esriCTFullWidth">
-            <div class="esriCTFullWidth" data-dojo-type="dijit/form/TextBox" disabled=true data-dojo-attach-point="geographyValue">
+            <div aria-label="${nls.workBench.geographyTitle}" class="esriCTFullWidth" readonly  data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="geographyValue">
             </div>
           </div>
           <div class="esriCTEditCostEquationLabel esriCTFullWidth esriCTEllipsis"  title="${nls.workBench.scenarioTitle}">
             ${nls.workBench.scenarioTitle}</div>
           <div class="esriCTEditCostEquationInput esriCTFullWidth">
-            <div class="esriCTFullWidth" data-dojo-type="dijit/form/Select" data-dojo-attach-point="scenarioValue">
+            <div class="esriCTFullWidth" data-dojo-type="jimu/dijit/formSelect" data-dojo-attach-point="scenarioValue" aria-label="${nls.workBench.scenarioTitle}">
             </div>
           </div>
           <div class="esriCTEditCostEquationLabel esriCTFullWidth esriCTEllipsis" title="${nls.workBench.newCostEquationTitle}">
@@ -27,19 +27,20 @@
            <div class="esriCTEditCostEquationLabel esriCTFullWidth esriCTEllipsis"  title="${nls.workBench.defaultCostEquationTitle}">
             ${nls.workBench.defaultCostEquationTitle}</div>
           <div class="esriCTEditCostEquationInput esriCTFullWidth">
-            <div class=="esriCTFullWidth" style="min-height:70px;" spellcheck="false" disabled=true  data-dojo-type="dijit/form/Textarea" data-dojo-attach-point="defaultCostEquationValue">
+            <div class="esriCTFullWidth" style="min-height:70px;" spellcheck="false" readonly data-dojo-type="dijit/form/Textarea" data-dojo-attach-point="defaultCostEquationValue"
+            aria-label="${nls.workBench.defaultCostEquationTitle}">
             </div>
           </div>
         </div>
         <div class="esriCTFullWidth">
-          <div class="esriCTHint" data-dojo-attach-point="costEquationHint">
+          <div style="outline-offset: -2px;" tabindex="0" role="presentation" class="esriCTHint" data-dojo-attach-point="costEquationHint">
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="esriCTPageFooter">
-    <div class="jimu-btn esriCTEllipsis" data-dojo-attach-point="okButton">${nls.common.ok}</div>
-    <div class="jimu-btn esriCTEllipsis" data-dojo-attach-point="cancelButton">${nls.common.cancel}</div>
+    <div class="jimu-btn esriCTEllipsis" data-dojo-attach-point="okButton" tabindex="0" role="button" aria-label="${nls.common.ok}">${nls.common.ok}</div>
+    <div class="jimu-btn esriCTEllipsis" data-dojo-attach-point="cancelButton" tabindex="0" role="button" aria-label="${nls.common.cancel}">${nls.common.cancel}</div>
   </div>
 </div>

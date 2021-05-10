@@ -5,14 +5,15 @@
           ${nls.intersectionPage.groupNameLabel}
         </div>
         <div class="esriCTGroupInfoContainer">
-          <div data-dojo-attach-point="groupNameTextBoxNode" style="width: 100%">
+          <div data-dojo-attach-point="groupNameTextBoxNode" style="width: 95%">
           </div>
         </div>
       </div>
   <div class="esriCTWrapper">
     <div class="esriCTlabel" title="${nls.addressPage.selectFieldTitle}">${nls.addressPage.selectFieldTitle}</div>
     <div class="esriCTGroupInfoContainer">
-      <div class="esriCTSelectAttributeNode" data-dojo-attach-point="selectNode" style="width: 100%"></div>
+      <div class="esriCTSelectAttributeNode jimu-float-leading" data-dojo-attach-point="selectNode" style="width: 95%"></div>
+      <a data-dojo-attach-point="attributeInfoNode" style="line-height: 30px;" class="jimu-float-trailing" target="_blank" href="https://developers.arcgis.com/rest/geocode/api-reference/geocoding-service-output.htm">${nls.addressPage.questionMark}</a>
     </div>
     <div class="esriCTHint">${nls.addressPage.geocoderHint}</div>
   </div>
@@ -23,5 +24,9 @@
       <div class="esriCTTableParentContainer" data-dojo-attach-point="tableParentContainer">
       </div>
     </fieldset>
+  </div>
+  <div class="esriCTCreditWarningContainer">
+    <a target="_blank" 
+      href="https://doc.arcgis.com/en/arcgis-online/administer/credits.htm">${nls.addressPage.consumesCredits}</a>
   </div>
 </div>

@@ -2,18 +2,19 @@
   <table class="page-table" cellpading="0" data-dojo-attach-point="reviewRowTable">
     <tbody>
 
-      <tr>
+      <tr data-dojo-attach-point="reviewDataRow" tabindex="0" role="region" aria-label="${nls.review.reviewData} ${nls.review.reviewDataHint}">
         <td colspan="3" class="panel-title-td">
           <div class="panel-title-text">${nls.review.reviewData}</div>
         </td>
       </tr>
       <tr class="bottom-border-bold task-instruction-row">
         <td colspan="3" class="panel-title-hint-td">
-          <div class="instruction" data-dojo-attach-point="reviewDataHint"></div>
+          <div class="instruction" data-dojo-attach-point="reviewDataHint">${nls.review.reviewDataHint}</div>
         </td>
       </tr>
 
-      <tr class="pad-bottom-10 task-row" data-dojo-attach-point="unMatchedControlRow" data-dojo-attach-event="onclick:_reviewUnMatched">
+      <tr class="pad-bottom-10 task-row" data-dojo-attach-point="unMatchedControlRow"
+        data-dojo-attach-event="onclick:_reviewUnMatched , onkeydown:_reviewUnMatched" tabindex="0" role="button">
         <td class="field-control-td width-100">
           <div class="task-text">${nls.review.reviewUnMatched}</div>
         </td>
@@ -31,7 +32,8 @@
         </td>
       </tr>
 
-      <tr class="pad-bottom-10 task-row" data-dojo-attach-point="duplicateControlRow" data-dojo-attach-event="onclick:_reviewDuplicate">
+      <tr class="pad-bottom-10 task-row" data-dojo-attach-point="duplicateControlRow" tabindex="0" role="button" 
+        data-dojo-attach-event="onclick:_reviewDuplicate , onkeydown:_reviewDuplicate">
         <td class="field-control-td width-100">
           <div class="task-text">${nls.review.reviewDuplicate}</div>
         </td>
@@ -45,11 +47,12 @@
       </tr>
       <tr class="bottom-border pad-bottom-10 task-instruction-row" data-dojo-attach-point="duplicateHintRow">
         <td colspan="3" data-dojo-attach-point="duplicateHintTd" class="instruction-padding">
-          <div class="instruction" data-dojo-attach-point="reviewDuplicateHint"></div>
+          <div class="instruction" data-dojo-attach-point="reviewDuplicateHint">${nls.review.reviewDuplicateHint}</div>
         </td>
       </tr>
 
-      <tr class="pad-bottom-10 task-row" data-dojo-attach-point="matchedControlRow" data-dojo-attach-event="onclick:_reviewMatched">
+      <tr class="pad-bottom-10 task-row" data-dojo-attach-point="matchedControlRow"
+        data-dojo-attach-event="onclick:_reviewMatched , onkeydown:_reviewMatched" tabindex="0" role="button">
         <td class="field-control-td width-100">
           <div class="task-text">${nls.review.reviewMatched}</div>
         </td>
@@ -71,9 +74,13 @@
     </tbody>
   </table>
 
-  <div class="pad-top-10">
-    <div class="jimu-btn float-right" data-dojo-attach-point="submitButton" data-dojo-attach-event="onclick:_submit">${nls.buttons.submit}</div>
-    <div class="float-right bg-loading-img bg-loading pad-top-10 display-none" data-dojo-attach-point="progressNode"></div>
-    <div class="jimu-btn float-right margin-right-15" data-dojo-attach-point="downloadButton" data-dojo-attach-event="onclick:_download">${nls.buttons.download}</div>
+  <div class="pad-top-10 float-right">
+    <div style="margin-right: 15px;" class="float-left bg-loading-img bg-loading pad-top-10 display-none" data-dojo-attach-point="progressNode">
+    </div>
+    <div class="jimu-btn float-left margin-right-15" data-dojo-attach-point="submitButton" tabindex="0" role="button"
+      aria-label="${nls.buttons.submit}" data-dojo-attach-event="onclick:_submit , onkeydown:_submit">
+      ${nls.buttons.submit}</div>
+    <div class="jimu-btn float-left" data-dojo-attach-point="downloadButton" tabindex="0" role="button"
+      aria-label="${nls.buttons.download}" data-dojo-attach-event="onclick:_download , keydown:_download">${nls.buttons.download}</div>
   </div>
 </div>

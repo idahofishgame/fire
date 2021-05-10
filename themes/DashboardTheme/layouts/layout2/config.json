@@ -187,7 +187,7 @@
           "left": 10,
           "top": 80
         },
-        "version": "2.12"
+        "version": "2.20"
       },
       {
         "uri": "widgets/ExtentNavigate/Widget",
@@ -195,7 +195,7 @@
           "left": 10,
           "top": 115
         },
-        "version": "2.12",
+        "version": "2.20",
         "visible": false
       },
       {
@@ -205,7 +205,7 @@
           "left": 10,
           "top": 185
         },
-        "version": "2.12",
+        "version": "2.20",
         "visible": false
       },
       {
@@ -214,7 +214,7 @@
           "right": 10,
           "top": 10
         },
-        "version": "2.12",
+        "version": "2.20",
         "visible": false
       },
       {
@@ -239,7 +239,7 @@
         "position": {
           "relativeTo": "browser"
         },
-        "version": "2.12",
+        "version": "2.20",
         "visible": false
       },
       {
@@ -249,12 +249,12 @@
           "top": 0,
           "zIndex": 1
         },
-        "version": "2.12",
+        "version": "2.20",
         "visible": false
       },
       {
         "uri": "widgets/AttributeTable/Widget",
-        "version": "2.12",
+        "version": "2.20",
         "position": {
           "relativeTo": "browser"
         },
@@ -268,7 +268,7 @@
           "right": 25,
           "bottom": 25
         },
-        "version": "2.12"
+        "version": "2.20"
       },
       {
         "position": {
