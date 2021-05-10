@@ -25,6 +25,9 @@
       "haloOn": true,
       "labelTransparency": 0
     },
+    "operationalLayer": {
+      "name": ""
+    },
     "labelType": "alphaNumeric",
     "labelDirection": "horizontal",
     "labelOrigin": "lowerLeft",

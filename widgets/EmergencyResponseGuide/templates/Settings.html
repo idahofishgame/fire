@@ -1,7 +1,7 @@
 <div>
     <!-- Spill Location DropDown -->
     <div class="ERGSettingsRow">
-      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" title="${nls.spillLocationButtonLabel}" data-dojo-attach-point="spillLocationSettingsButton"></div>
+      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" data-container="spillLocationContainer" title="${nls.spillLocationButtonLabel}" role="button" aria-label="${nls.spillLocationButtonLabel}" data-dojo-attach-point="spillLocationSettingsButton" tabindex="0" aria-expanded ="false"></div>
       <div class="ERGInputLabelSettings ERGEllipsis SubTitle" title="${nls.spillLocationLabel}">${nls.spillLocationLabel}</div>      
     </div>
     
@@ -15,7 +15,7 @@
     
     <!-- Initial Isolation Zone DropDown -->
     <div class="ERGSettingsRow">
-      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" title="${nls.IIButtonLabel}" data-dojo-attach-point="IISettingsButton"></div>
+      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" data-container="IIZoneContainer" tabindex="0" aria-expanded ="false" role="button" title="${nls.IIButtonLabel}" aria-label="${nls.IIButtonLabel}" data-dojo-attach-point="IISettingsButton"></div>
       <div class="ERGInputLabelSettings ERGEllipsis SubTitle" title="${nls.IISettingsLabel}">${nls.IISettingsLabel}</div>      
     </div>
     
@@ -29,7 +29,7 @@
     
     <!-- Protective Action Zone DropDown -->    
     <div class="ERGSettingsRow">
-      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" title="${nls.PAButtonLabel}" data-dojo-attach-point="PASettingsButton"></div>
+      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" data-container="PAZoneContainer" tabindex="0" aria-label="${nls.PAButtonLabel}" aria-expanded ="false" role="button" title="${nls.PAButtonLabel}" data-dojo-attach-point="PASettingsButton"></div>
       <div class="ERGInputLabelSettings ERGEllipsis SubTitle" title="${nls.PASettingsLabel}">${nls.PASettingsLabel}</div>
     </div>
     
@@ -43,7 +43,7 @@
     
     <!-- Downwind Zone DropDown -->    
     <div class="ERGSettingsRow">
-      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" title="${nls.downwindButtonLabel}" data-dojo-attach-point="downwindSettingsButton"></div>
+      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" data-container="downwindZoneContainer" tabindex="0" aria-expanded ="false" role="button" aria-label="${nls.downwindButtonLabel}" title="${nls.downwindButtonLabel}" data-dojo-attach-point="downwindSettingsButton"></div>
       <div class="ERGInputLabelSettings ERGEllipsis SubTitle" title="${nls.downwindSettingsLabel}">${nls.downwindSettingsLabel}</div>
     </div>
     
@@ -57,7 +57,7 @@
     
     <!-- Fire Isolation DropDown -->
     <div class="ERGSettingsRow">      
-      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" title="${nls.fireButtonLabel}" data-dojo-attach-point="fireSettingsButton"></div>
+      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" data-container="fireZoneContainer" aria-expanded ="false" role="button" tabindex="0" aria-label="${nls.fireButtonLabel}" title="${nls.fireButtonLabel}" data-dojo-attach-point="fireSettingsButton"></div>
       <div class="ERGInputLabelSettings ERGEllipsis SubTitle" title="${nls.fireSettingsLabel}">${nls.fireSettingsLabel}</div>
     </div>
     
@@ -71,7 +71,7 @@
     
     <!-- BLEVE Isolation DropDown -->
     <div class="ERGSettingsRow">
-      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" title="${nls.bleveButtonLabel}" data-dojo-attach-point="bleveSettingsButton"></div>
+      <div class="ERGLabelSettingsRightButton ERGSettingsButtonIcon ERGPointer" data-container="bleveZoneContainer"  tabindex="0" aria-expanded ="false" role="button" aria-label="${nls.bleveButtonLabel}" title="${nls.bleveButtonLabel}" data-dojo-attach-point="bleveSettingsButton"></div>
       <div class="ERGInputLabelSettings ERGEllipsis SubTitle" title="${nls.bleveSettingsLabel}">${nls.bleveSettingsLabel}</div>
     </div>
     

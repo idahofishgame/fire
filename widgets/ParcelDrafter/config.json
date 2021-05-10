@@ -52,6 +52,7 @@
   "lineTypes": [
     {
       "type": null,
+      "isDefault": true,
       "label": "Connection Line",
       "symbol": {
         "color": [
@@ -67,6 +68,7 @@
     },
     {
       "type": null,
+      "isDefault": false,
       "label": "Boundary Line",
       "symbol": {
         "color": [
@@ -83,6 +85,7 @@
   ],
   "snappingTolerance": 15,
   "miscloseSnapDistance": 5,
-  "miscloseSnapDistanceUnit": "uSSurveyFeet",
-  "miscloseRatioSnap": 5000
+  "miscloseSnapDistanceUnit": "feet",
+  "miscloseRatioSnap": 5000,
+  "useFieldInfosFromWebmap": true
 }

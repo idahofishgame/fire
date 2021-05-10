@@ -18,10 +18,17 @@
     </div>
     <!--Add/delete/reorder buttons-->
     <div class="esriCTStatisticsButtonParentDiv">
-        <div class="esriCTAddStatisticsIcon esriCTStatisticsButtons" data-dojo-attach-point="btnAddNode" title="${nls.statisticsSettings.addNewStatisticsText}"></div>
+        <div class="esriCTAddStatisticsIcon esriCTStatisticsButtons" data-dojo-attach-point="btnAddNode"
+            title="${nls.statisticsSettings.addNewStatisticsText}" tabindex="0" role="button"
+            aria-label="${nls.statisticsSettings.addNewStatisticsText}"></div>
         <div class="esriCTDeleteStatisticsIcon esriCTStatisticsButtons" data-dojo-attach-point="btnCrossNode"
-            title="${nls.statisticsSettings.deleteStatisticsText}"></div>
-        <div class="esriCTStatisticsUpIcon esriCTStatisticsButtons" data-dojo-attach-point="btnUpNode" title="${nls.statisticsSettings.moveStatisticsUpText}"></div>
-        <div class="esriCTStatisticsDownIcon esriCTStatisticsButtons" data-dojo-attach-point="btnDownNode" title="${nls.statisticsSettings.moveStatisticsDownText}"></div>
+            title="${nls.statisticsSettings.deleteStatisticsText}" tabindex="-1" role="button"
+            aria-label="${nls.statisticsSettings.deleteStatisticsText}"></div>
+        <div class="esriCTStatisticsUpIcon esriCTStatisticsButtons" data-dojo-attach-point="btnUpNode"
+            title="${nls.statisticsSettings.moveStatisticsUpText}" tabindex="-1" role="button"
+            aria-label="${nls.statisticsSettings.moveStatisticsUpText}"></div>
+        <div class="esriCTStatisticsDownIcon esriCTStatisticsButtons" data-dojo-attach-point="btnDownNode"
+            title="${nls.statisticsSettings.moveStatisticsDownText}" tabindex="-1" role="button"
+            aria-label="${nls.statisticsSettings.moveStatisticsDownText}"></div>
     </div>
 </div>

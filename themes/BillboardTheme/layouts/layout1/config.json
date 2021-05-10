@@ -7,7 +7,7 @@
           "left": 15,
           "top": 200
         },
-        "version": "2.12"
+        "version": "2.20"
       },
       "widgets/FullScreen/Widget": {
         "visible": false,

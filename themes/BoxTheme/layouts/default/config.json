@@ -6,7 +6,7 @@
         "right": 0,
         "bottom": 0
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/OverviewMap/Widget",
       "visible": false,
@@ -14,7 +14,7 @@
         "right": 0,
         "top": 0
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/ZoomSlider/Widget",
       "visible": true,
@@ -22,7 +22,7 @@
         "left": 10,
         "top": 10
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/HomeButton/Widget",
       "visible": false,
@@ -30,7 +30,7 @@
         "left": 10,
         "top": 70
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/MyLocation/Widget",
       "visible": false,
@@ -38,7 +38,7 @@
         "left": 10,
         "top": 100
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/Search/Widget",
       "visible": false,
@@ -54,7 +54,7 @@
         "left": 10,
         "bottom": 30
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/Coordinate/Widget",
       "visible": false,
@@ -62,11 +62,11 @@
         "left": 10,
         "bottom": 10
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/AttributeTable/Widget",
       "visible": false,
-      "version": "2.12",
+      "version": "2.20",
       "position": {
         "relativeTo": "browser"
       }
@@ -76,7 +76,7 @@
       "position": {
         "relativeTo": "browser"
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/ExtentNavigate/Widget",
       "visible": false,
@@ -84,7 +84,7 @@
         "left": 10,
         "top": 160
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/FullScreen/Widget",
       "visible": false,
@@ -92,7 +92,7 @@
         "left": 10,
         "top": 130
       },
-      "version": "2.12"
+      "version": "2.20"
     }]
   },
 

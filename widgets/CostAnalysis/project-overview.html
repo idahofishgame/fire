@@ -4,12 +4,12 @@
     <div data-dojo-attach-point="assetSummaryDiv"></div>
     <table class="esriCTTable esriCTBoldFont esriCTTotalCostTable" style="width: 100%;">
       <tbody>
-        <tr>
-          <td class="esriCTAssetItemsTotalCostLabel" data-dojo-attach-point="totalCostLabel">${nls.projectOverview.totalCostLabel}</td>
+        <tr tabindex="0" >
+          <td aria-label="${nls.projectOverview.totalCostLabel}" class="esriCTAssetItemsTotalCostLabel" data-dojo-attach-point="totalCostLabel">${nls.projectOverview.totalCostLabel}</td>
           <td class="esriCTAssetItemsTotalCost" data-dojo-attach-point="totalCost"></td>
         </tr>
-        <tr>
-          <td class="esriCTAssetItemsGrossCostLabel" data-dojo-attach-point="grossCostLabel">${nls.projectOverview.grossCostLabel}</td>
+        <tr tabindex="0" >
+          <td aria-label="${nls.projectOverview.grossCostLabel}" class="esriCTAssetItemsGrossCostLabel" data-dojo-attach-point="grossCostLabel">${nls.projectOverview.grossCostLabel}</td>
           <td class="esriCTAssetItemsGrossCost" data-dojo-attach-point="grossCost"></td>
         </tr>
         <tr>
@@ -19,6 +19,5 @@
     </table>
   </div>
   <div data-dojo-attach-point="projectSummaryInfo">
-    <div class="esriCTBoldFont esriCTProjectName" data-dojo-attach-point="projectNameDiv"></div>
   </div>
 </div>

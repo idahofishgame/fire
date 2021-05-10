@@ -12,13 +12,13 @@
     <div class="label-position jimu-float-leading" title="${nls.decimalPlaces}">${nls.decimalPlaces}</div>
     <div class="setting-wapper jimu-float-trailing">
       <input type="text" data-dojo-type="dijit/form/NumberSpinner" required="false"
-        placeHolder="" data-dojo-props="constraints: {min:0, max:9},intermediateChanges: true" data-dojo-attach-point="decimalPlacesText"/>
+        placeHolder="" data-dojo-props="constraints: {min:0, max:9, places:0},intermediateChanges: true" data-dojo-attach-point="decimalPlacesText"/>
     </div>
   </div>
 
   <div class="setting-items decimal clearFix">
-    <div class="label-position jimu-float-leading" title="${nls.use1000Separator}">${nls.use1000Separator}</div>
-    <div data-dojo-attach-point="digitSeparatorDiv" class="setting-wapper label-position jimu-float-trailing">
+    <div class="label-position jimu-float-leading textOverFlow" title="${nls.use1000Separator}">${nls.use1000Separator}</div>
+    <div data-dojo-attach-point="digitSeparatorDiv" class="setting-wapper jimu-float-trailing">
     </div>
   </div>
 

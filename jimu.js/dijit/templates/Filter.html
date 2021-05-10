@@ -11,8 +11,8 @@
 			</div>
 		</div>
 		<div data-dojo-attach-point="matchMsg" class="match-msg">
-			<div data-dojo-attach-point="oneOrZeroMsg" style="display:none;">${nls.oneOrZeroMsg}</div>
-			<select data-dojo-attach-point="allAnySelect">
+			<div data-dojo-attach-point="oneOrZeroMsg" tabindex="0" style="display:none;">${nls.oneOrZeroMsg}</div>
+			<select data-dojo-attach-point="allAnySelect" data-dojo-type="jimu/dijit/formSelect" class="dijit-form-Select restrict-select-width" style="width:100%;height:30px;">
 				<option value="AND" selected>${nls.matchMsgAll}</option>
 				<option value="OR">${nls.matchMsgAny}</option>
 			</select>
@@ -32,6 +32,6 @@
 			+ ${nls.addSet}
 		</div>
 	</div>
-	<div data-dojo-attach-point="noFilterTipSection" class="no-filter-tip hidden"></div>
+	<div data-dojo-attach-point="noFilterTipSection" class="no-filter-tip hidden" tabindex="0"></div>
 	<div data-dojo-attach-point="loading" data-dojo-type="jimu/dijit/LoadingIndicator" data-dojo-props="hidden:true"></div>
 </div>

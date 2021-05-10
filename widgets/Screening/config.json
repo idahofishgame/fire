@@ -19,7 +19,10 @@
   "defaultBufferUnit": "UNIT_STATUTE_MILE",
   "reportSettings": {
     "columnTitleColor": "#c6d9ec",
-    "reportTitle": "Screening Report"
+    "reportTitle": "Screening Report",
+    "displaySummaryInReport": true,
+    "hideZeroValueRow": false,
+    "hideNullValueRow": false
   },
   "searchSourceSettings": {
     "allPlaceholder": "",
@@ -206,5 +209,7 @@
     "type": "esriSFS",
     "style": "esriSFSSolid"
   },
-  "layers": []
+  "layers": [],
+  "showCircleTool": true,
+  "groupbyfieldCheckBoxStatus": true
 }

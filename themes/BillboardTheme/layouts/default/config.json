@@ -6,56 +6,56 @@
         "left": 60,
         "top": 10
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/ZoomSlider/Widget",
       "position": {
         "top": 10,
         "left":15
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/HomeButton/Widget",
       "position": {
         "left": 15,
         "top": 80
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/MyLocation/Widget",
       "position": {
         "left": 15,
         "top": 120
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/Scalebar/Widget",
       "position": {
         "left": 15,
         "bottom": 25
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/Coordinate/Widget",
       "position": {
         "left": 15,
         "bottom": 5
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/OverviewMap/Widget",
       "position": {
         "right": 0,
         "bottom": 0
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/Splash/Widget",
       "visible": false,
       "position": {
         "relativeTo": "browser"
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "position": {
         "left": 60,
@@ -88,7 +88,7 @@
         "left": 15,
         "top": 159
       },
-      "version": "2.12"
+      "version": "2.20"
     }, {
       "uri": "widgets/FullScreen/Widget",
       "visible": false,
@@ -96,7 +96,7 @@
         "right": 8,
         "top": 8
       },
-      "version": "2.12"
+      "version": "2.20"
     }]
   },
 

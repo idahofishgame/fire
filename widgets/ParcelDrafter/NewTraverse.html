@@ -23,15 +23,15 @@
         <div data-dojo-attach-point="traverseEntryNode" class="esriCTEntrtyNodeContent esriCTRow">
             <div data-dojo-attach-point="lineSymbolNode" class="esriCTSymbolContainer">
             </div>
-            <div data-dojo-attach-point="bearingNode" class="esriCTBearingRow" data-dojo-type="dijit/form/ValidationTextBox">
+            <div data-dojo-attach-point="bearingNode" class="esriCTBearingRow" data-dojo-type="dijit/form/ValidationTextBox" aria-label="${nls.traverseSettings.bearingLabel}">
             </div>
-            <div data-dojo-attach-point="lengthNode" data-dojo-type="dijit/form/ValidationTextBox">
+            <div data-dojo-attach-point="lengthNode" data-dojo-type="dijit/form/ValidationTextBox" aria-label="${nls.traverseSettings.lengthLabel}">
             </div>
-            <div data-dojo-attach-point="radiusNode" data-dojo-type="dijit/form/ValidationTextBox">
+            <div data-dojo-attach-point="radiusNode" data-dojo-type="dijit/form/ValidationTextBox" aria-label="${nls.traverseSettings.radiusLabel}">
             </div>
             <div class="esriCTAddRow">
                 <div data-dojo-attach-point="addButton" class="esriCTAddIcon"
-                title="${nls.traverseSettings.addButtonTitle}">
+                title="${nls.traverseSettings.addButtonTitle}" tabindex="0" role="button" aria-label="${nls.traverseSettings.addButtonTitle}">
                 </div>
             </div>
         </div>
@@ -40,19 +40,19 @@
             <div class="esriCTTraverseToolContainer">
                 <!-- Update rotation point tool-->
                 <div class="esriCTTraverseToolIcons ecriCTUpdateRotationPointIcon esriCTCursorPointer" title="${nls.planSettings.updateRotationPointTooltipText}"
-                    data-dojo-attach-point="updateRotationPointNode">
+                    data-dojo-attach-point="updateRotationPointNode" tabindex="0" role="button" aria-label="${nls.planSettings.updateRotationPointTooltipText}" aria-pressed="false">
                 </div>
                 <!-- Screen digitization tool-->
                 <div class="esriCTTraverseToolIcons ecriCTLocationIcon esriCTCursorPointer" title="${nls.planSettings.onScreenDigitizationTooltipText}"
-                    data-dojo-attach-point="screenDigitizationNode">
+                    data-dojo-attach-point="screenDigitizationNode" tabindex="0" role="button" aria-label="${nls.planSettings.onScreenDigitizationTooltipText}" aria-pressed="false">
                 </div>
                 <!-- Zoom tool-->
                 <div class="esriCTHidden esriCTTraverseToolIcons ecriCTZoomToIcon esriCTCursorPointer" title="${nls.planSettings.zoomToLocationTooltipText}"
-                    data-dojo-attach-point="zoomToNode">
+                    data-dojo-attach-point="zoomToNode" tabindex="0" role="button" aria-label="${nls.planSettings.zoomToLocationTooltipText}">
                 </div>
                 <!-- Expand/Collapse grid tool-->
                 <div class="esriCTHidden  esriCTTraverseToolIcons esriCTCollapse esriCTCursorPointer" title="${nls.planSettings.collapseGridTooltipText}"
-                    data-dojo-attach-point="expandCollapseNode">
+                    data-dojo-attach-point="expandCollapseNode" tabindex="0" role="button" aria-label="${nls.planSettings.collapseGridTooltipText}">
                 </div>
             </div>
         </div>

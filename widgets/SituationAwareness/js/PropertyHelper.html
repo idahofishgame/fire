@@ -50,11 +50,11 @@
       </div>
     </div>
     <div class="jimu-r-row pad-top-5">
-      <textarea class="commentTextArea" data-dojo-attach-point="commentTextArea" rows="5"></textarea>
+      <textarea aria-label="${nls.comments}" class="commentTextArea" data-dojo-attach-point="commentTextArea" rows="5"></textarea>
     </div>
   </div>
   <div class="snapshot-name-footer jimu-float-trailing pad-top-10">
-    <div class="jimu-btn ok pad-right-5 jimu-state-disabled" data-dojo-attach-point="btnOk"></div>
-    <div class="jimu-btn cancel" data-dojo-attach-point="btnCancel"></div>
+    <div role="button" tabindex="-1" class="jimu-btn ok pad-right-5 jimu-state-disabled" data-dojo-attach-point="btnOk"></div>
+    <div role="button" tabindex="0" class="jimu-btn cancel" data-dojo-attach-point="btnCancel"></div>
   </div>
 </div>

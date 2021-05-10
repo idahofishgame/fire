@@ -17,6 +17,7 @@
         <select data-dojo-attach-point="periodSelect" data-dojo-type="dijit/form/Select" data-dojo-attach-event="change:onChange" class="restrict-select-width">
           <option value="automatic">${nls.automatic}</option>
           <option value="year">${nls.year}</option>
+          <option value="quarter">${nls.quarter}</option>
           <option value="month">${nls.month}</option>
           <option value="day">${nls.day}</option>
           <option value="hour">${nls.hour}</option>
@@ -87,8 +88,29 @@
   </div>
 
   <div class="section display-section padding-right-5" data-dojo-attach-point="displaySection">
+    <div class="section-item column-type bar-type line-type average-align align-items-start">
+      <div class="left-label textOverFlow" style="max-width: 200px;" title="${nls.defaultRange}">${nls.defaultRange}</div>
+      <div>
+        <div>
+          <input type="radio" name="defaultRange" data-dojo-attach-event="change:onChange" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="autoRangeRadio" >
+          <label class="marginleft10">${nls.automatic}</label>
+        </div>
+        <div style="margin-top: 7px;">
+          <input type="radio" name="defaultRange" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="allRangeRadio">
+          <label class="marginleft10">${nls.all}</label>
+        </div>
+      </div>
+    </div>
     <div data-dojo-attach-point="bgColorDiv" class="section-item column-type bar-type pie-type line-type average-align">
       <div>${nls.backgroundColor}</div>
+    </div>
+
+    <div data-dojo-attach-point="tooltipDiv" class="section-item column-type bar-type line-type average-align">
+      <div>${nls.tooltipMode}</div>
+      <select data-dojo-attach-point="tooltipModeSelect" data-dojo-type="dijit/form/Select" data-dojo-attach-event="change:onChange" class="restrict-select-width">
+        <option value="item">${nls.single}</option>
+        <option value="axis" selected="selected">${nls.multiple}</option>
+      </select>
     </div>
     
     <div style="margin-bottom: 10px;" class="section-item pie-type average-align">
@@ -130,6 +152,9 @@
       <div data-dojo-attach-point="hAxisKeepIntScaleRow" class="average-align">
         <div class="left-label textOverFlow" title="${nls.intScaleText}">${nls.intScaleText}</div>
       </div>
+      <div data-dojo-attach-point="hAxisSeparatorRow" class="average-align">
+        <div class="left-label textOverFlow" title="${nls.use1000Separator}">${nls.use1000Separator}</div>
+      </div>
     </div>
 
     <div data-dojo-attach-point="verTogglePocketContent">
@@ -150,6 +175,9 @@
       </div>
       <div data-dojo-attach-point="vAxisKeepIntScaleRow" class="average-align">
         <div class="left-label textOverFlow" title="${nls.intScaleText}">${nls.intScaleText}</div>
+      </div>
+      <div data-dojo-attach-point="vAxisSeparatorRow" class="average-align">
+        <div class="left-label textOverFlow" title="${nls.use1000Separator}">${nls.use1000Separator}</div>
       </div>
     </div>
 

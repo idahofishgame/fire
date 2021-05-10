@@ -99,6 +99,24 @@
         <span class="btn-add-label">${nls.addField}</span>
       </div>
       <div data-dojo-attach-point="fieldOptions" class="fieldOptions"></div>
+      <div class="esriCTSortOptionsWrapper">
+        <div class="label iconOptionsText padTop10">
+          ${nls.sortLabel}
+        </div>
+        <div class="jimu-r-row esriCTDisplayInlineFlex">
+          <div class="rdoGroupField esriCTMarginRight20">
+            <input name="layerOptionSort" id="rdo-layer-field-asc" data-dojo-type="dijit/form/RadioButton"
+              class="jimu-radio-btn" data-dojo-attach-point="layerOptionsAscRadioBtn" title="${nls.ascRadioBtnLabel}"
+              checked />
+            <label class="esriCTRadioLabel" for="rdo-layer-field-asc">${nls.ascRadioBtnLabel}</label>
+          </div>
+          <div class="rdoGroupField">
+            <input name="layerOptionSort" id="rdo-layer-field-desc" data-dojo-type="dijit/form/RadioButton"
+              class="jimu-radio-btn" data-dojo-attach-point="layerOptionsDescRadioBtn" title="${nls.descRadioBtnLabel}" />
+            <label class="esriCTRadioLabel" for="rdo-layer-field-desc">${nls.descRadioBtnLabel}</label>
+          </div>
+        </div>
+      </div>
       <div class="label iconOptionsText padTop20" data-dojo-attach-point="groupOptionsTextLabel">
         ${nls.groupOptionsText}
       </div>
@@ -120,6 +138,23 @@
             <div class="rdoGroupField" data-dojo-attach-point="div_rdoGroupRenderer">
               <input name="c" id="rdo-group-render" data-dojo-type="dijit/form/RadioButton" class="jimu-radio-btn" data-dojo-attach-point="rdoGroupRenderer" title="${nls.rdoGroupByRenderer}" />
               <label class="label" for="rdo-group-render" data-dojo-attach-point="rdoGroupRendererLabel">${nls.rdoGroupByRenderer}</label>
+            </div>
+          </div>
+          <div>
+            <div class="label iconOptionsText padTop10">
+              ${nls.sortLabel}
+            </div>
+            <div class="jimu-r-row esriCTDisplayInlineFlex">
+              <div class="rdoGroupField esriCTMarginRight20">
+                <input name="groupSort" id="rdo-group-field-asc" data-dojo-type="dijit/form/RadioButton" class="jimu-radio-btn"
+                  data-dojo-attach-point="groupOptionsAscRadioBtn" title="${nls.ascRadioBtnLabel}" checked />
+                <label class="esriCTRadioLabel" for="rdo-group-field-asc">${nls.ascRadioBtnLabel}</label>
+              </div>
+              <div class="rdoGroupField">
+                <input name="groupSort" id="rdo-group-field-desc" data-dojo-type="dijit/form/RadioButton" class="jimu-radio-btn"
+                  data-dojo-attach-point="groupOptionsDescRadioBtn" title="${nls.descRadioBtnLabel}" />
+                <label class="esriCTRadioLabel" for="rdo-group-field-desc">${nls.descRadioBtnLabel}</label>
+              </div>
             </div>
           </div>
         </div>

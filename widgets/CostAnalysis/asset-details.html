@@ -4,20 +4,20 @@
       <div class="esriCTAssetDetailsTitle">
         ${nls.workBench.assetDetailsTitle}
       </div>
-      <div style="padding: 10px 0; text-align : center; font-weight : bold;" data-dojo-attach-point="noAssetDetails">
+      <div class="esriCTNoAssetMessage" tabindex="0" role="presentation" aria-label="${nls.workBench.noAssetAddedMsg}" data-dojo-attach-point="noAssetDetails">
         ${nls.workBench.noAssetAddedMsg}
       </div>
       <div data-dojo-attach-point="assetDetailsNode">
         <div data-dojo-attach-point="listNode"></div>
         <div>
-          <div>
+          <div style="width: 100%; float: left;">
             <div class="esriCTTotalCostTitle" title="${nls.assetDetails.totalCostTitle}">${nls.assetDetails.totalCostTitle}</div>
-            <div style="height: 30px;" class="esriCTEditEquationIcon" data-dojo-attach-point="additionalCostBtn"></div>
+            <div style="height: 30px;" class="esriCTEditEquationIcon" data-dojo-attach-point="additionalCostBtn" tabindex="0" role="button" aria-label="${nls.assetDetails.totalCostTitle}"></div>
           </div>
           <div data-dojo-attach-point="totalProjectCost">
             <table class="esriCTTable" style="width: 100%;">
               <tbody>
-                <tr>
+                <tr tabindex="0">
                   <td class="esriCTBoldFont esriCTAssetDetailsTotalCostLabel" data-dojo-attach-point="totalCostLabel">${nls.projectOverview.totalCostLabel}</td>
                   <td class="esriCTBoldFont esriCTAssetDetailsTotalCost" data-dojo-attach-point="totalCost"></td>
                 </tr>
@@ -29,7 +29,7 @@
             </table>
             <table class="esriCTTable" style="width: 100%;">
               <tbody>
-                <tr>
+                <tr tabindex="0">
                   <td class="esriCTBoldFont esriCTAssetDetailsGrossCostLabel" data-dojo-attach-point="grossCostLabel">${nls.projectOverview.grossCostLabel}</td>
                   <td class="esriCTBoldFont esriCTAssetDetailsGrossCost" data-dojo-attach-point="grossCost"></td>
                 </tr>
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="esriCTPageFooter">
-      <div class="jimu-btn esriCTEllipsis" data-dojo-attach-point="okButton">${nls.common.back}</div>
+      <div class="jimu-btn esriCTEllipsis" data-dojo-attach-point="okButton" tabindex="0" role="button" aria-label="${nls.common.back}">${nls.common.back}</div>
     </div>
   </div>
   <div style="height: 100%; width: 100%" class="esriCTHidden" data-dojo-attach-point="costEquationEditorParent">
