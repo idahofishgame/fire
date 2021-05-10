@@ -1,6 +1,7 @@
 // All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 // See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
-//>>built
+
+//>>built
 /*
  jQuery Knob*/
 require({cache:{"widgets/Visibility/js/VisibilityControl":function(){define("dojo/_base/declare dojo/_base/kernel dojo/_base/event dojo/Deferred dojo/_base/lang dojo/_base/array dojo/on dojo/number dojo/string dojo/dom-style dojo/mouse dojo/promise/all dijit/_WidgetBase dijit/_TemplatedMixin dijit/_WidgetsInTemplateMixin dojo/text!../templates/VisibilityControl.html jimu/dijit/Message esri/dijit/util/busyIndicator esri/graphic esri/layers/GraphicsLayer esri/tasks/FeatureSet esri/graphicsUtils esri/symbols/SimpleMarkerSymbol esri/renderers/SimpleRenderer esri/Color esri/dijit/analysis/CreateViewshed esri/layers/FeatureLayer esri/geometry/Polygon esri/geometry/geometryEngine ./geometryUtils jimu/dijit/CoordinateControl ./util jimu/utils dojo/keys dijit/focus ./portal-publish dojo/dom-class dojo/dom-construct esri/renderers/UniqueValueRenderer jimu/LayerStructure ../js/symbologySettings dijit/form/NumberTextBox jimu/dijit/CheckBox ./jquery.knob.min".split(" "),

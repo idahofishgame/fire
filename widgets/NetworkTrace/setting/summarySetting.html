@@ -1,36 +1,55 @@
 <div class="ParameterDiv">
     <div class="esriCTSummaryParentDiv">
-        <!-- Table -->
-        <div class="esriCTOutPutSettingsParent esriCTClearBoth">
-            <div data-dojo-attach-point="outputTableNode">
+        <fieldset class="esriCTFieldset">
+            <legend class="esriCTLegendTitle">${nls.summaryTab.summaryFieldsetText}</legend>
+
+            <div class="esriCTMultiSelectParent">
+                <div class="esriCTMultiSelectContainer esriCTInputOutputPanelParentContainer">
+                    <div class="esriCTLblContainer esriCTInputOutputPanelLblContainer">
+                        ${nls.summaryTab.inputOutput}
+                    </div>
+                    <div class="esriCTInputPanel" data-dojo-attach-point="inputOutputParameterPanel">
+                    </div>
+                </div>
+                <div class="esriCTMultiSelectContainer" data-dojo-attach-point="fieldParentContainer">
+                    <div class="esriCTLblContainer esriCTFieldPanelLblContainer">
+                        ${nls.summaryTab.field}
+                    </div>
+                    <div class="esriCTFieldPanel" data-dojo-attach-point="fieldPanel">
+                    </div>
+                </div>
+                <div class="esriCTMultiSelectContainer esriCTOperatorParentContainer" data-dojo-attach-point="operatorParentContainer">
+                    <div class="esriCTLblContainer esriCTOperatorPanelLblContainer">
+                        ${nls.summaryTab.operator}
+                    </div>
+                    <div class="esriCTOperatorPanel" data-dojo-attach-point="operatorPanel">
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- Summary text -->
-        <div class="esriCTClearBoth esriCTSummaryTextParentContainer">
-            ${nls.summaryTab.summaryTextTitle}
-        </div>
-        <!-- Summary hint -->
-        <div class="esriCTSummaryHintField">
-            ${nls.hintText.inputTextHint}
-        </div>
-        <!-- Summary editor -->
-        <div class="esriCTSummaryEditor esriCTClearBoth">
-            <div data-dojo-attach-point="editorContainer">
+            <div class="esriCTSummaryHintField">
+                ${nls.hintText.expressionHint}
             </div>
             <div class="esriCTButtonContainer">
-                <div style="float: left;margin-top: 5px;" title="${nls.summaryTab.expressionVerifyButtonText}"
-                    data-dojo-attach-event="onclick:_onClickVerifyExpressionBtn"
-                    data-dojo-attach-point="verifySummaryExpression"
-                    class="jimu-state-disabled jimu-btn jimu-float-trailing esriSetButton jimu-leading-margin1">
+                <div style="float: left" title="${nls.summaryTab.expressionAddButtonText}" data-dojo-attach-event="onclick:_onClickAddExpressionBtn"
+                    data-dojo-attach-point="addSummaryExpression" class="jimu-state-disabled jimu-btn jimu-float-trailing esriSetButton jimu-leading-margin1">
+                    ${nls.summaryTab.expressionAddButtonText}
+                </div>
+                <div style="float: left;" title="${nls.summaryTab.expressionVerifyButtonText}" data-dojo-attach-event="onclick:_onClickVerifyExpressionBtn"
+                    data-dojo-attach-point="verifySummaryExpression" class="jimu-state-disabled jimu-btn jimu-float-trailing esriSetButton jimu-leading-margin1">
                     ${nls.summaryTab.expressionVerifyButtonText}
                 </div>
             </div>
-        </div>
-        <!-- Auto zoom checkbox -->
-        <div class="esriCTSummaryAutoZoom esriCTClearBoth">
-            <div data-dojo-type="jimu/dijit/CheckBox" data-dojo-attach-point="autoZoomAfterTrace" class="jimu-checkbox"
-                title="${nls.summaryTab.zoomText}" label="${nls.summaryTab.zoomText}">
+        </fieldset>
+        <fieldset class="esriCTFieldset">
+            <legend class="esriCTLegendTitle">${nls.summaryTab.summaryEditorText}</legend>
+
+            <div class="esriCTSummaryEditor">
+                <div data-dojo-attach-point="editorContainer">
+                </div>
+                <div class="esriCTSummaryHintField">
+                    ${nls.hintText.inputTextHint}
+                </div>
             </div>
-        </div>
+        </fieldset>
     </div>
 </div>
